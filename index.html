@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suwa Sahaya — සුව සහාය · Free Healthcare AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g1:#062d1e;--g2:#0f4a32;--g3:#1a6b4a;--g4:#2a9d6f;--g5:#3dbf8a;
+  --g-pale:#e4f5ee;--g-ghost:#f0faf5;
+  --gold:#b8934a;--gold-l:#e8c87a;--gold-pale:#fdf6e3;
+  --cream:#faf7f2;--white:#fff;
+  --txt:#0a1f14;--txt-m:#2d5040;--txt-s:#6b9080;--txt-xs:#9ab8a8;
+  --red:#b83232;--red-l:#fee2e2;--orange:#c8652a;--orange-l:#fef3e8;
+  --blue:#1a4a8a;--blue-l:#e8f0fe;--purple:#6b2d9e;--purple-l:#f3e8ff;
+  --r:14px;--r-sm:10px;--r-lg:22px;
+  --sh:0 8px 40px rgba(6,45,30,.12);--sh-sm:0 2px 16px rgba(6,45,30,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--txt);overflow-x:hidden;}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-thumb{background:rgba(42,157,111,.3);border-radius:4px;}
+
+/* ══════════════ NAV ══════════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  background:rgba(6,45,30,.97);backdrop-filter:blur(20px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4%;height:64px;border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4em;font-weight:600;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-logo small{font-family:'Outfit',sans-serif;font-size:.55em;color:var(--g5);font-weight:300;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.82em;padding:7px 12px;border-radius:8px;transition:all .2s;}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-cta{background:var(--gold)!important;color:var(--g1)!important;font-weight:600!important;}
+.nav-cta:hover{background:var(--gold-l)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.hamburger span{width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+
+/* ══════════════ TICKER ══════════════ */
+.ticker-wrap{position:fixed;top:64px;left:0;right:0;z-index:800;background:var(--red);display:flex;align-items:center;gap:0;overflow:hidden;height:36px;}
+.ticker-label{background:rgba(0,0,0,.25);color:#fff;font-size:.68em;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:0 14px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
+.ticker-track{flex:1;overflow:hidden;height:100%;display:flex;align-items:center;}
+.ticker-inner{display:flex;gap:56px;animation:tick 30s linear infinite;white-space:nowrap;}
+.ticker-inner span{font-size:.78em;color:#fff;}
+.ticker-inner b{color:var(--gold-l);}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════════ HERO ══════════════ */
+.hero{
+  min-height:100vh;padding:120px 4% 60px;
+  background:linear-gradient(150deg,var(--g1) 0%,#0d3d28 50%,#163520 100%);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:40px;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.hero-bg-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;pointer-events:none;}
+.hero-bg-orb-1{width:500px;height:500px;background:var(--g5);top:-100px;right:5%;}
+.hero-bg-orb-2{width:350px;height:350px;background:var(--gold);bottom:-80px;left:8%;}
+.hero-bg-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px;}
+.hero-left{position:relative;z-index:1;max-width:580px;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:5px 16px;font-size:.75em;color:var(--g5);margin-bottom:24px;letter-spacing:.3px;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6em,5.5vw,4.2em);font-weight:700;color:#fff;line-height:1.1;margin-bottom:10px;}
+.hero h1 em{color:var(--g5);font-style:normal;}
+.hero-sinhala{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1em,2.5vw,1.6em);color:var(--gold-l);margin-bottom:18px;opacity:.85;}
+.hero p{font-size:clamp(.9em,1.8vw,1.05em);color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:32px;max-width:480px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--r);font-family:'Outfit',sans-serif;font-size:.88em;font-weight:600;cursor:pointer;transition:all .25s;text-decoration:none;border:none;}
+.btn-gold{background:var(--gold);color:var(--g1);}
+.btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,147,74,.35);}
+.btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,.07);}
+.btn-green{background:var(--g3);color:#fff;}
+.btn-green:hover{background:var(--g4);}
+.hero-stats{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap;}
+.h-stat-n{font-family:'Cormorant Garamond',serif;font-size:2em;font-weight:700;color:var(--g5);}
+.h-stat-l{font-size:.72em;color:rgba(255,255,255,.45);margin-top:2px;}
+
+/* Slideshow */
+.hero-slideshow{position:relative;z-index:1;width:min(44%,440px);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh);flex-shrink:0;}
+@media(max-width:860px){.hero-slideshow{display:none;}}
+.ss-track{position:relative;height:360px;}
+.ss-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:0;transition:opacity 1.2s ease;}
+.ss-slide.active{opacity:1;}
+.ss-slide-bg{position:absolute;inset:0;}
+.ss-slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,45,30,.85) 0%,rgba(6,45,30,.2) 100%);}
+.ss-icon{font-size:4.5em;position:relative;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));}
+.ss-caption{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:1;}
+.ss-caption strong{display:block;color:var(--gold-l);font-size:1.05em;margin-bottom:4px;}
+.ss-caption span{font-size:.8em;color:rgba(255,255,255,.8);line-height:1.5;}
+.ss-dots{position:absolute;bottom:14px;right:16px;display:flex;gap:5px;z-index:2;}
+.ss-dot{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.35);cursor:pointer;transition:.3s;}
+.ss-dot.active{width:18px;background:#fff;}
+
+/* ══════════════ SECTIONS ══════════════ */
+section{padding:72px 4%;}
+.s-tag{display:inline-block;font-size:.68em;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--g4);margin-bottom:10px;}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8em,3.5vw,2.8em);font-weight:600;color:var(--g1);line-height:1.2;margin-bottom:14px;}
+.s-sub{font-size:.95em;color:var(--txt-m);line-height:1.8;max-width:560px;}
+.s-head{margin-bottom:44px;}
+.s-head.center{text-align:center;}
+.s-head.center .s-sub{margin:0 auto;}
+
+/* ══════════════ HOW IT WORKS ══════════════ */
+.how{background:var(--g-ghost);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.step{background:#fff;border-radius:var(--r);padding:24px 20px;border:1px solid rgba(42,157,111,.1);transition:all .3s;position:relative;overflow:hidden;}
+.step::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g4),var(--g5));transform:scaleX(0);transform-origin:left;transition:.3s;}
+.step:hover::after{transform:scaleX(1);}
+.step:hover{transform:translateY(-4px);box-shadow:var(--sh);}
+.step-num{width:38px;height:38px;border-radius:10px;background:var(--g-pale);color:var(--g3);font-family:'Cormorant Garamond',serif;font-size:1.2em;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.step-icon{font-size:1.7em;margin-bottom:8px;}
+.step h3{font-size:.9em;font-weight:600;color:var(--g1);margin-bottom:6px;}
+.step p{font-size:.8em;color:var(--txt-m);line-height:1.65;}
+
+/* ══════════════ PATIENT PORTAL ══════════════ */
+.patient-portal{background:var(--g1);position:relative;overflow:hidden;}
+.patient-portal::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(42,157,111,.15),transparent 65%);}
+.pp-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:52px;align-items:start;position:relative;z-index:1;}
+@media(max-width:860px){.pp-grid{grid-template-columns:1fr;}}
+
+/* Left info panel */
+.pp-info .s-tag{color:var(--g5);}
+.pp-info .s-title{color:#fff;}
+.pp-info .s-sub{color:rgba(255,255,255,.6);}
+.pp-features{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+.pp-feat{display:flex;align-items:flex-start;gap:12px;padding:14px;background:rgba(255,255,255,.05);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.06);}
+.pp-feat-icon{width:36px;height:36px;border-radius:9px;background:rgba(42,157,111,.2);display:flex;align-items:center;justify-content:center;font-size:1em;flex-shrink:0;}
+.pp-feat-text h4{font-size:.85em;font-weight:600;color:#fff;margin-bottom:2px;}
+.pp-feat-text p{font-size:.75em;color:rgba(255,255,255,.5);line-height:1.5;}
+
+/* Patient Portal Card */
+.pp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);overflow:hidden;}
+.pp-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.07);}
+.pp-tab{flex:1;padding:14px;text-align:center;font-size:.78em;font-weight:600;color:rgba(255,255,255,.45);cursor:pointer;transition:all .2s;border:none;background:transparent;font-family:'Outfit',sans-serif;}
+.pp-tab.active{color:var(--g5);background:rgba(61,191,138,.08);border-bottom:2px solid var(--g5);}
+.pp-tab:hover:not(.active){color:rgba(255,255,255,.7);}
+.pp-panel{display:none;padding:20px;}
+.pp-panel.active{display:block;}
+
+/* API Key bar */
+.api-bar{background:rgba(184,147,74,.08);border:1px solid rgba(184,147,74,.2);border-radius:var(--r-sm);padding:12px 14px;margin-bottom:16px;}
+.api-bar label{font-size:.68em;color:var(--gold-l);font-weight:600;display:block;margin-bottom:6px;letter-spacing:.3px;}
+.api-row{display:flex;gap:8px;}
+.api-in{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(184,147,74,.25);border-radius:8px;padding:8px 12px;font-size:.78em;color:#fff;font-family:'Outfit',sans-serif;outline:none;}
+.api-in::placeholder{color:rgba(255,255,255,.28);}
+.api-in:focus{border-color:var(--gold);}
+.api-btn{background:var(--gold);color:var(--g1);border:none;border-radius:8px;padding:8px 14px;font-size:.76em;font-weight:700;cursor:pointer;transition:.2s;font-family:'Outfit',sans-serif;white-space:nowrap;}
+.api-btn:hover{background:var(--gold-l);}
+
+/* Chat messages */
+.chat-msgs{height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:12px;margin-bottom:12px;}
+.chat-msgs::-webkit-scrollbar{width:3px;}
+.chat-msgs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);}
+.cm{display:flex;gap:8px;}
+.cm.user{flex-direction:row-reverse;}
+.cm-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;flex-shrink:0;}
+.cm-av.bot{background:var(--g3);}
+.cm-av.usr{background:var(--gold);}
+.cm-bub{max-width:78%;padding:10px 13px;border-radius:var(--r);font-size:.8em;line-height:1.6;}
+.cm-bub.bot{background:rgba(255,255,255,.08);color:rgba(255,255,255,.88);border-top-left-radius:4px;border:1px solid rgba(255,255,255,.07);}
+.cm-bub.usr{background:var(--g3);color:#fff;border-top-right-radius:4px;}
+.typing-ind{display:flex;gap:4px;padding:10px 13px;background:rgba(255,255,255,.08);border-radius:var(--r);border-top-left-radius:4px;width:fit-content;}
+.typing-ind span{width:5px;height:5px;background:rgba(255,255,255,.4);border-radius:50%;animation:td 1.2s infinite;}
+.typing-ind span:nth-child(2){animation-delay:.2s;}
+.typing-ind span:nth-child(3){animation-delay:.4s;}
+@keyframes td{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+
+/* Quick chips */
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.chip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:4px 11px;font-size:.72em;color:rgba(255,255,255,.65);cursor:pointer;transition:.2s;font-family:'Outfit',sans-serif;}
+.chip:hover{background:rgba(42,157,111,.3);border-color:var(--g5);color:#fff;}
+
+/* Chat input */
+.chat-inp-row{display:flex;gap:8px;}
+.chat-inp{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:9px 13px;font-size:.8em;color:#fff;font-family:'Outfit',sans-serif;outline:none;resize:none;max-height:90px;}
+.chat-inp::placeholder{color:rgba(255,255,255,.3);}
+.chat-inp:focus{border-color:var(--g4);}
+.chat-send{width:38px;height:38px;background:var(--g4);border:none;border-radius:9px;color:#fff;font-size:.95em;cursor:pointer;transition:.2s;flex-shrink:0;}
+.chat-send:hover{background:var(--g5);}
+
+/* ── PATIENT FORM TAB ── */
+.form-box{display:flex;flex-direction:column;gap:14px;}
+.fg{display:flex;flex-direction:column;gap:5px;}
+.fg label{font-size:.72em;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.3px;}
+.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:9px 12px;color:#fff;font-family:'Outfit',sans-serif;font-size:.82em;outline:none;transition:.2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--g4);}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.25);}
+.fg select{cursor:pointer;}
+.fg select option{background:var(--g2);color:#fff;}
+.fg textarea{resize:vertical;min-height:80px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.submit-btn{background:var(--g3);color:#fff;border:none;border-radius:var(--r-sm);padding:12px;font-family:'Outfit',sans-serif;font-size:.85em;font-weight:600;cursor:pointer;transition:.2s;width:100%;}
+.submit-btn:hover{background:var(--g4);}
+
+/* Upload area */
+.upload-zone{border:2px dashed rgba(255,255,255,.15);border-radius:var(--r-sm);padding:20px;text-align:center;cursor:pointer;transition:.2s;position:relative;}
+.upload-zone:hover{border-color:var(--g4);background:rgba(42,157,111,.05);}
+.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.upload-zone-icon{font-size:1.8em;margin-bottom:6px;}
+.upload-zone p{font-size:.75em;color:rgba(255,255,255,.45);}
+.upload-zone p b{color:var(--g5);}
+.uploaded-files{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.uf-item{display:flex;align-items:center;gap:8px;background:rgba(42,157,111,.1);border:1px solid rgba(42,157,111,.2);border-radius:7px;padding:7px 10px;}
+.uf-item-name{flex:1;font-size:.75em;color:rgba(255,255,255,.8);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.uf-item-remove{background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:.9em;padding:0;line-height:1;}
+.uf-item-remove:hover{color:#fff;}
+
+/* Doctor select */
+.dr-select-wrap{display:flex;flex-direction:column;gap:8px;}
+.dr-type-btns{display:flex;gap:6px;flex-wrap:wrap;}
+.dr-type-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:6px 12px;font-size:.75em;color:rgba(255,255,255,.6);cursor:pointer;transition:.2s;font-family:'Outfit',sans-serif;}
+.dr-type-btn.active{background:rgba(42,157,111,.2);border-color:var(--g5);color:#fff;}
+.dr-results{display:flex;flex-direction:column;gap:8px;max-height:200px;overflow-y:auto;margin-top:8px;}
+.dr-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:var(--r-sm);padding:12px;cursor:pointer;transition:.2s;}
+.dr-card:hover,.dr-card.selected{background:rgba(42,157,111,.15);border-color:var(--g5);}
+.dr-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;}
+.dr-name{font-size:.85em;font-weight:600;color:#fff;}
+.dr-spec{font-size:.7em;background:rgba(42,157,111,.2);color:var(--g5);padding:2px 8px;border-radius:10px;}
+.dr-detail{font-size:.72em;color:rgba(255,255,255,.5);line-height:1.5;}
+.dr-avail{font-size:.7em;color:rgba(255,255,255,.4);margin-top:4px;}
+
+/* Send to doctor */
+.send-doctor-section{border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:4px;}
+.send-doctor-section h4{font-size:.8em;color:rgba(255,255,255,.6);margin-bottom:10px;}
+.selected-dr-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(42,157,111,.15);border:1px solid rgba(42,157,111,.3);border-radius:20px;padding:5px 12px;font-size:.76em;color:var(--g5);margin-bottom:10px;}
+
+/* ══════════════ ALERTS ══════════════ */
+.alerts-section{background:var(--g-ghost);}
+.alerts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.alert-card{background:#fff;border-radius:var(--r);padding:20px;border-left:4px solid var(--red);box-shadow:var(--sh-sm);transition:.3s;}
+.alert-card.warn{border-color:var(--orange);}
+.alert-card.info{border-color:var(--g4);}
+.alert-card.good{border-color:#22c55e;}
+.alert-card:hover{transform:translateY(-3px);box-shadow:var(--sh);}
+.alert-badge{display:inline-block;font-size:.62em;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:10px;}
+.badge-urgent{background:var(--red-l);color:var(--red);}
+.badge-warn{background:var(--orange-l);color:var(--orange);}
+.badge-info{background:var(--g-pale);color:var(--g3);}
+.badge-good{background:#dcfce7;color:#166534;}
+.alert-card h4{font-size:.9em;font-weight:600;color:var(--g1);margin-bottom:6px;}
+.alert-card p{font-size:.8em;color:var(--txt-m);line-height:1.65;}
+.alert-date{font-size:.7em;color:var(--txt-xs);margin-top:10px;}
+
+/* ══════════════ REGISTER ══════════════ */
+.register-section{background:var(--cream);}
+.reg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;}
+.reg-card{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm);transition:.3s;}
+.reg-card:hover{transform:translateY(-5px);box-shadow:var(--sh);}
+.rc-top{padding:32px 28px 24px;}
+.rc-top.green{background:linear-gradient(135deg,var(--g1),var(--g2));}
+.rc-top.blue{background:linear-gradient(135deg,#0f2244,#1e3a70);}
+.rc-top.purple{background:linear-gradient(135deg,#2d0f44,#5a1e80);}
+.rc-icon{font-size:2.2em;margin-bottom:14px;}
+.rc-top h3{font-family:'Cormorant Garamond',serif;font-size:1.5em;font-weight:600;color:#fff;margin-bottom:8px;}
+.rc-top p{font-size:.82em;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:16px;}
+.rc-perks{display:flex;flex-direction:column;gap:7px;margin-bottom:20px;}
+.rc-perk{font-size:.78em;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:7px;}
+.rc-perk::before{content:'✓';font-weight:700;flex-shrink:0;}
+.rc-top.green .rc-perk::before{color:var(--g5);}
+.rc-top.blue .rc-perk::before{color:#7ab3ff;}
+.rc-top.purple .rc-perk::before{color:#c77aff;}
+.rc-btn{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.25);border-radius:var(--r-sm);padding:11px 18px;font-family:'Outfit',sans-serif;font-size:.83em;font-weight:600;cursor:pointer;transition:.2s;width:100%;}
+.rc-btn:hover{background:rgba(255,255,255,.2);}
+.rc-bottom{background:#fff;padding:16px 28px;}
+.rc-bottom p{font-size:.76em;color:var(--txt-s);line-height:1.6;}
+
+/* ══════════════ EMERGENCY ══════════════ */
+.emr-section{background:var(--g1);}
+.emr-section .s-tag{color:var(--g5);}
+.emr-section .s-title{color:#fff;}
+.emr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;}
+.emr-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r);padding:22px 16px;text-align:center;text-decoration:none;display:block;transition:.3s;}
+.emr-card:hover{background:rgba(255,255,255,.1);transform:translateY(-3px);}
+.emr-icon{font-size:1.9em;margin-bottom:8px;}
+.emr-num{font-family:'Cormorant Garamond',serif;font-size:2em;font-weight:700;color:var(--g5);margin-bottom:4px;}
+.emr-name{font-size:.72em;color:rgba(255,255,255,.55);}
+
+/* ══════════════ FOOTER ══════════════ */
+footer{background:var(--g1);border-top:1px solid rgba(255,255,255,.06);padding:36px 4% 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:1.2em;color:#fff;font-weight:600;}
+.foot-logo small{display:block;font-family:'Outfit',sans-serif;font-size:.58em;color:var(--txt-s);font-weight:300;margin-top:2px;}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+.foot-links a{font-size:.78em;color:var(--txt-s);text-decoration:none;transition:.2s;}
+.foot-links a:hover{color:#fff;}
+.foot-copy{font-size:.7em;color:var(--txt-xs);text-align:right;}
+
+/* ══════════════ MODAL ══════════════ */
+.overlay{position:fixed;inset:0;z-index:1000;background:rgba(6,45,30,.8);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:16px;}
+.overlay.open{display:flex;}
+.modal{background:#fff;border-radius:var(--r-lg);width:100%;max-width:520px;max-height:92vh;overflow-y:auto;animation:min .3s ease;}
+@keyframes min{from{opacity:0;transform:scale(.95) translateY(8px)}to{opacity:1;transform:none}}
+.modal-hd{padding:26px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.modal-hd h2{font-family:'Cormorant Garamond',serif;font-size:1.65em;font-weight:600;color:var(--g1);}
+.modal-hd p{font-size:.8em;color:var(--txt-m);margin-top:3px;}
+.modal-x{width:32px;height:32px;border-radius:8px;background:var(--g-ghost);border:none;font-size:1em;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--txt-m);flex-shrink:0;transition:.2s;}
+.modal-x:hover{background:var(--g-pale);}
+.modal-bd{padding:20px 28px 28px;}
+.mfg{margin-bottom:16px;}
+.mfg label{display:block;font-size:.76em;font-weight:600;color:var(--txt-m);margin-bottom:5px;letter-spacing:.2px;}
+.mfg input,.mfg select,.mfg textarea{width:100%;padding:10px 13px;border:1.5px solid #dce8e3;border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:.85em;color:var(--txt);background:#fff;outline:none;transition:.2s;}
+.mfg input:focus,.mfg select:focus,.mfg textarea:focus{border-color:var(--g4);}
+.mfg textarea{resize:vertical;min-height:85px;}
+.mfg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.m-submit{width:100%;padding:13px;background:var(--g2);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-size:.88em;font-weight:600;cursor:pointer;transition:.2s;margin-top:6px;}
+.m-submit:hover{background:var(--g3);transform:translateY(-1px);}
+.m-success{text-align:center;padding:20px 0;display:none;}
+.m-success-icon{font-size:2.8em;margin-bottom:10px;}
+.m-success h3{font-family:'Cormorant Garamond',serif;font-size:1.5em;color:var(--g2);margin-bottom:8px;}
+.m-success p{font-size:.82em;color:var(--txt-m);}
+
+/* ══════════════ TOAST ══════════════ */
+.toast{position:fixed;bottom:24px;right:24px;z-index:2000;background:var(--g2);color:#fff;padding:12px 18px;border-radius:var(--r);font-size:.83em;box-shadow:0 4px 20px rgba(0,0,0,.2);transform:translateY(60px);opacity:0;transition:all .3s;max-width:280px;}
+.toast.show{transform:none;opacity:1;}
+
+/* ══════════════ ANIMATIONS ══════════════ */
+.fu{opacity:0;transform:translateY(24px);transition:all .65s ease;}
+.fu.vis{opacity:1;transform:none;}
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:var(--g1);flex-direction:column;padding:16px;border-bottom:1px solid rgba(255,255,255,.06);z-index:800;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .hero{padding:108px 4% 48px;}
+  section{padding:52px 4%;}
+  .pp-grid{grid-template-columns:1fr;}
+  .fg-row,.mfg-row{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+  .foot-copy{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a class="nav-logo" href="#">🌿 සුව සහාය <small>Suwa Sahaya</small></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#how">How It Works</a>
+    <a href="#portal">Patient Portal</a>
+    <a href="#alerts">Alerts</a>
+    <a href="#register">Join Us</a>
+    <a href="#emergency">Emergency</a>
+    <a href="#portal" class="nav-cta">Get Help →</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-label">🚨 Live Updates</div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <span>🚑 Suwa Seriya Ambulance: <b>1990</b></span>
+      <span>⚠️ Private hospital strike ongoing — Government hospitals fully operational</span>
+      <span>💊 Generic medicines FREE at all government pharmacies island-wide</span>
+      <span>👨‍⚕️ <b>50+ volunteer doctors</b> available today — use AI chat to connect</span>
+      <span>📞 Health Information Hotline: <b>1979</b></span>
+      <span>🧠 Mental Health Support: <b>1926</b></span>
+      <span>🏥 All 50 government hospitals open 24/7 emergency services</span>
+      <span>🌿 New free clinic this weekend in Colombo 05 — all specialties</span>
+      <span>🚑 Suwa Seriya Ambulance: <b>1990</b></span>
+      <span>⚠️ Private hospital strike ongoing — Government hospitals fully operational</span>
+      <span>💊 Generic medicines FREE at all government pharmacies island-wide</span>
+      <span>👨‍⚕️ <b>50+ volunteer doctors</b> available today — use AI chat to connect</span>
+      <span>📞 Health Information Hotline: <b>1979</b></span>
+      <span>🧠 Mental Health Support: <b>1926</b></span>
+      <span>🏥 All 50 government hospitals open 24/7 emergency services</span>
+      <span>🌿 New free clinic this weekend in Colombo 05 — all specialties</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-dots"></div>
+  <div class="hero-bg-orb hero-bg-orb-1"></div>
+  <div class="hero-bg-orb hero-bg-orb-2"></div>
+  <div class="hero-left fu">
+    <div class="hero-badge">🌿 Free Healthcare for Every Sri Lankan</div>
+    <h1>Healthcare is a<br><em>Right, Not a Luxury</em></h1>
+    <div class="hero-sinhala">සෑම ශ්‍රී ලාංකිකයකුටම නොමිලේ සෞඛ්‍ය සේවා</div>
+    <p>During hospital strikes, medicine shortages & the economic crisis — Suwa Sahaya connects you with volunteer doctors, affordable medicines, and free government hospitals. Instantly. Free. Always.</p>
+    <div class="hero-btns">
+      <a href="#portal" class="btn btn-gold">🩺 Get Free Help Now</a>
+      <a href="#register" class="btn btn-outline-white">👨‍⚕️ Volunteer as Doctor</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="h-stat-n" id="statDoctors">50+</div><div class="h-stat-l">Volunteer Doctors</div></div>
+      <div><div class="h-stat-n">50+</div><div class="h-stat-l">Free Hospitals</div></div>
+      <div><div class="h-stat-n">50+</div><div class="h-stat-l">Medicine Alternatives</div></div>
+      <div><div class="h-stat-n">24/7</div><div class="h-stat-l">AI Support</div></div>
+    </div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="hero-slideshow fu">
+    <div class="ss-track" id="ssTrack">
+      <div class="ss-slide active"><div class="ss-slide-bg" style="background:linear-gradient(135deg,#0f4a32,#1a7a50)"></div><div class="ss-slide-overlay"></div><div class="ss-icon">🏥</div><div class="ss-caption"><strong>50 Free Government Hospitals</strong><span>All districts covered — 24/7 emergency services available island-wide</span></div></div>
+      <div class="ss-slide"><div class="ss-slide-bg" style="background:linear-gradient(135deg,#1a2744,#2d4a8a)"></div><div class="ss-slide-overlay"></div><div class="ss-icon">👨‍⚕️</div><div class="ss-caption"><strong>50+ Volunteer Doctors</strong><span>Free consultations online & in-person across Sri Lanka</span></div></div>
+      <div class="ss-slide"><div class="ss-slide-bg" style="background:linear-gradient(135deg,#3d1a10,#7a3520)"></div><div class="ss-slide-overlay"></div><div class="ss-icon">💊</div><div class="ss-caption"><strong>Affordable Generic Medicines</strong><span>Save up to 90% — same quality, fraction of the cost</span></div></div>
+      <div class="ss-slide"><div class="ss-slide-bg" style="background:linear-gradient(135deg,#1a1a3d,#2d3f7a)"></div><div class="ss-slide-overlay"></div><div class="ss-icon">🤖</div><div class="ss-caption"><strong>AI Health Assistant</strong><span>24/7 intelligent triage powered by LLaMA 3.3 — free forever</span></div></div>
+      <div class="ss-slide"><div class="ss-slide-bg" style="background:linear-gradient(135deg,#2d1a00,#6b4500)"></div><div class="ss-slide-overlay"></div><div class="ss-icon">🇱🇰</div><div class="ss-caption"><strong>Built for Sri Lanka</strong><span>Designed for our healthcare crisis — bilingual, local, free</span></div></div>
+    </div>
+    <div class="ss-dots" id="ssDots"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="s-head center fu">
+    <div class="s-tag">Simple & Fast</div>
+    <h2 class="s-title">How Suwa Sahaya Works</h2>
+    <p class="s-sub">Four simple steps to free healthcare support anywhere in Sri Lanka</p>
+  </div>
+  <div class="steps">
+    <div class="step fu"><div class="step-icon">🗣️</div><div class="step-num">01</div><h3>Describe Symptoms</h3><p>Type your symptoms in English or Sinhala. Our AI understands Sri Lankan health context and Singlish too.</p></div>
+    <div class="step fu"><div class="step-icon">🧠</div><div class="step-num">02</div><h3>AI Triages You</h3><p>Our AI agent analyzes urgency, identifies possible conditions, and gives you clear guidance instantly.</p></div>
+    <div class="step fu"><div class="step-icon">👨‍⚕️</div><div class="step-num">03</div><h3>Find Free Doctor</h3><p>Select your doctor type, see available volunteer doctors, upload your reports and send them directly.</p></div>
+    <div class="step fu"><div class="step-icon">💊</div><div class="step-num">04</div><h3>Save on Medicines</h3><p>Get generic alternatives up to 90% cheaper — often free at government hospitals near you.</p></div>
+  </div>
+</section>
+
+<!-- PATIENT PORTAL -->
+<section class="patient-portal" id="portal">
+  <div class="pp-grid">
+    <!-- Left info -->
+    <div class="pp-info fu">
+      <div class="s-tag">Patient Portal</div>
+      <h2 class="s-title">Your Complete<br><span style="color:var(--g5)">Health Hub</span></h2>
+      <p class="s-sub" style="color:rgba(255,255,255,.6)">AI chat, doctor selection, report uploads, and medicine search — all in one place, completely free.</p>
+      <div class="pp-features">
+        <div class="pp-feat"><div class="pp-feat-icon">🤖</div><div class="pp-feat-text"><h4>AI Symptom Analysis</h4><p>Real-time triage with LLaMA 3.3 AI</p></div></div>
+        <div class="pp-feat"><div class="pp-feat-icon">👨‍⚕️</div><div class="pp-feat-text"><h4>Doctor Matching & Reports</h4><p>Select doctor type, send history & reports</p></div></div>
+        <div class="pp-feat"><div class="pp-feat-icon">💊</div><div class="pp-feat-text"><h4>Medicine Cost Savings</h4><p>Find generics up to 90% cheaper</p></div></div>
+        <div class="pp-feat"><div class="pp-feat-icon">🏥</div><div class="pp-feat-text"><h4>Hospital Locator</h4><p>Nearest free hospitals by district</p></div></div>
+      </div>
+    </div>
+
+    <!-- Right portal card -->
+    <div class="fu">
+      <div class="pp-card">
+        <!-- Tabs -->
+        <div class="pp-tabs">
+          <button class="pp-tab active" onclick="switchTab('chat')">💬 AI Chat</button>
+          <button class="pp-tab" onclick="switchTab('doctor')">👨‍⚕️ Find Doctor</button>
+          <button class="pp-tab" onclick="switchTab('report')">📋 My Reports</button>
+          <button class="pp-tab" onclick="switchTab('medicine')">💊 Medicines</button>
+        </div>
+
+        <!-- ── TAB: CHAT ── -->
+        <div class="pp-panel active" id="tab-chat">
+          <div class="api-bar">
+            <label>🔑 Groq API Key — Get free key at console.groq.com</label>
+            <div class="api-row">
+              <input class="api-in" id="apiKey" type="password" placeholder="gsk_xxxxxxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+              <button class="api-btn" onclick="saveKey()">Save ✓</button>
+            </div>
+          </div>
+          <div class="chat-msgs" id="chatMsgs">
+            <div class="cm"><div class="cm-av bot">🌿</div><div class="cm-bub bot">ආයුබෝවන්! 🇱🇰 I'm Suwa Sahaya — your free AI health assistant. Describe your symptoms or ask anything about healthcare in Sri Lanka!</div></div>
+          </div>
+          <div class="chips">
+            <span class="chip" onclick="quickChat('I have fever and bad headache')">🤒 Fever & headache</span>
+            <span class="chip" onclick="quickChat('Find a free doctor in Colombo')">👨‍⚕️ Find doctor</span>
+            <span class="chip" onclick="quickChat('Cheap alternative for Panadol')">💊 Cheap medicine</span>
+            <span class="chip" onclick="quickChat('Nearest free hospital in Kandy')">🏥 Hospital nearby</span>
+            <span class="chip" onclick="quickChat('I have chest pain and difficulty breathing')">🚨 Chest pain</span>
+          </div>
+          <div class="chat-inp-row">
+            <textarea class="chat-inp" id="chatInput" rows="1" placeholder="Describe symptoms or ask a health question..." onkeydown="chatEnter(event)" oninput="autoGrow(this)"></textarea>
+            <button class="chat-send" onclick="sendChat()">➤</button>
+          </div>
+        </div>
+
+        <!-- ── TAB: FIND DOCTOR ── -->
+        <div class="pp-panel" id="tab-doctor">
+          <div class="form-box">
+            <div class="fg">
+              <label>Select Doctor Specialization</label>
+              <div class="dr-type-btns" id="drTypeBtns">
+                <button class="dr-type-btn active" onclick="selectDrType(this,'General Physician')">🩺 General</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Pediatrician')">👶 Pediatrics</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Cardiologist')">❤️ Cardiology</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Gynecologist')">🌸 Gynecology</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Psychiatrist')">🧠 Mental Health</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Dermatologist')">🔬 Dermatology</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Diabetologist')">💉 Diabetes</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Neurologist')">🧬 Neurology</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'Orthopedic')">🦴 Orthopedic</button>
+                <button class="dr-type-btn" onclick="selectDrType(this,'')">👁️ All</button>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Filter by District (optional)</label>
+              <select id="drDistrict" onchange="loadDoctors()">
+                <option value="">All Districts</option>
+                <option>Colombo</option><option>Gampaha</option><option>Kandy</option>
+                <option>Galle</option><option>Matara</option><option>Kurunegala</option>
+                <option>Anuradhapura</option><option>Ratnapura</option><option>Badulla</option>
+                <option>Jaffna</option><option>Batticaloa</option><option>Trincomalee</option>
+                <option>Hambantota</option><option>Matale</option><option>Polonnaruwa</option>
+                <option>Ampara</option><option>Kegalle</option>
+              </select>
+            </div>
+            <div class="dr-results" id="drResults">
+              <div style="text-align:center;padding:20px;color:rgba(255,255,255,.3);font-size:.8em;">Loading doctors...</div>
+            </div>
+            <!-- Send to selected doctor -->
+            <div class="send-doctor-section" id="sendDrSection" style="display:none;">
+              <h4>Selected Doctor:</h4>
+              <div class="selected-dr-pill" id="selectedDrPill">No doctor selected</div>
+              <div class="fg"><label>Your Health Issue / Reason for Consultation</label><textarea id="consultReason" placeholder="Describe your health issue briefly..."></textarea></div>
+              <div class="fg"><label>Your Phone / WhatsApp</label><input type="tel" id="patientPhone" placeholder="077 XXX XXXX"></div>
+              <button class="submit-btn" onclick="sendToDoctor()">📤 Send Request to Doctor</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TAB: MY REPORTS ── -->
+        <div class="pp-panel" id="tab-report">
+          <div class="form-box">
+            <div class="fg"><label>Patient Name</label><input type="text" id="ptName" placeholder="Your full name"></div>
+            <div class="fg-row">
+              <div class="fg"><label>Age</label><input type="number" id="ptAge" placeholder="Age"></div>
+              <div class="fg"><label>Gender</label>
+                <select id="ptGender"><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option></select>
+              </div>
+            </div>
+            <div class="fg"><label>Blood Group</label>
+              <select id="ptBlood"><option value="">Select</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+            </div>
+            <div class="fg"><label>Known Medical Conditions</label><textarea id="ptConditions" placeholder="e.g. Diabetes, High Blood Pressure, Asthma..."></textarea></div>
+            <div class="fg"><label>Current Medications</label><textarea id="ptMeds" placeholder="List your current medicines..."></textarea></div>
+            <div class="fg"><label>Upload Reports / Documents (PDF, Images)</label>
+              <div class="upload-zone" id="uploadZone">
+                <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" multiple onchange="handleFiles(this.files)">
+                <div class="upload-zone-icon">📎</div>
+                <p><b>Click or drag files here</b><br>PDF, Images, Word docs accepted</p>
+              </div>
+              <div class="uploaded-files" id="uploadedFiles"></div>
+            </div>
+            <div style="display:flex;gap:8px;">
+              <button class="submit-btn" onclick="saveReport()">💾 Save Health Profile</button>
+              <button class="submit-btn" style="background:rgba(255,255,255,.1);flex:0 0 auto;width:auto;padding:12px 16px;" onclick="clearReport()" title="Clear all data">🗑️</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TAB: MEDICINES ── -->
+        <div class="pp-panel" id="tab-medicine">
+          <div class="form-box">
+            <div class="fg">
+              <label>Search Medicine or Condition</label>
+              <div style="display:flex;gap:8px;">
+                <input type="text" id="medSearch" placeholder="e.g. Panadol, diabetes, fever..." style="flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:9px 12px;color:#fff;font-family:'Outfit',sans-serif;font-size:.82em;outline:none;" oninput="searchMeds(this.value)" onkeydown="if(event.key==='Enter')searchMeds(this.value)">
+              </div>
+            </div>
+            <div class="chips" style="margin-top:-4px;">
+              <span class="chip" onclick="searchMeds('fever');document.getElementById('medSearch').value='fever'">Fever</span>
+              <span class="chip" onclick="searchMeds('diabetes');document.getElementById('medSearch').value='diabetes'">Diabetes</span>
+              <span class="chip" onclick="searchMeds('blood pressure');document.getElementById('medSearch').value='blood pressure'">BP</span>
+              <span class="chip" onclick="searchMeds('pain');document.getElementById('medSearch').value='pain'">Pain</span>
+              <span class="chip" onclick="searchMeds('allergy');document.getElementById('medSearch').value='allergy'">Allergy</span>
+            </div>
+            <div id="medResults" style="max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALERTS -->
+<section class="alerts-section" id="alerts">
+  <div class="s-head fu">
+    <div class="s-tag">⚠️ Live Alerts</div>
+    <h2 class="s-title">Healthcare Alerts in Sri Lanka</h2>
+    <p class="s-sub">Stay informed about strikes, shortages, and free clinic opportunities</p>
+  </div>
+  <div class="alerts-grid">
+    <div class="alert-card fu"><span class="alert-badge badge-urgent">Urgent</span><h4>Private Hospital Doctor Strike</h4><p>Strike affecting private hospitals in Colombo & Gampaha. Government hospitals fully operational with extended hours and free services.</p><div class="alert-date">📅 May 2026 · Ongoing</div></div>
+    <div class="alert-card warn fu"><span class="alert-badge badge-warn">Medicine Alert</span><h4>Branded Medicine Shortage</h4><p>Shortages in some branded antibiotics and cardiac medicines. Generic alternatives fully available FREE at all government pharmacies.</p><div class="alert-date">📅 May 2026 · Ongoing</div></div>
+    <div class="alert-card info fu"><span class="alert-badge badge-info">Free Clinic</span><h4>Weekend Free Clinic — Colombo</h4><p>Free community clinic in Colombo 05 this Saturday & Sunday. All specialties. SLMA volunteer doctors. No appointment needed.</p><div class="alert-date">📅 This Weekend · Limited Slots</div></div>
+    <div class="alert-card good fu"><span class="alert-badge badge-good">Good News</span><h4>50 New Volunteer Doctors Joined</h4><p>50 dedicated volunteer doctors registered on Suwa Sahaya to give free consultations. Use AI chat or Find Doctor tab to connect.</p><div class="alert-date">📅 May 2026 · Active</div></div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register-section" id="register">
+  <div class="s-head center fu">
+    <div class="s-tag">Join the Movement</div>
+    <h2 class="s-title">Be Part of the Solution</h2>
+    <p class="s-sub">Doctor, organization, or clinic — join Suwa Sahaya and help Sri Lankans access free healthcare</p>
+  </div>
+  <div class="reg-grid">
+    <div class="reg-card fu">
+      <div class="rc-top green">
+        <div class="rc-icon">👨‍⚕️</div>
+        <h3>Volunteer Doctor</h3>
+        <p>Give back to your community. Offer free consultations during this healthcare crisis.</p>
+        <div class="rc-perks"><div class="rc-perk">Set your own hours & availability</div><div class="rc-perk">Online or in-person consultations</div><div class="rc-perk">Choose your specialty & district</div><div class="rc-perk">Receive patient reports & history</div></div>
+        <button class="rc-btn" onclick="openModal('doctor')">Register as Volunteer Doctor →</button>
+      </div>
+      <div class="rc-bottom"><p>All medical backgrounds welcome — GP, specialist, intern. Your time is your gift.</p></div>
+    </div>
+    <div class="reg-card fu">
+      <div class="rc-top blue">
+        <div class="rc-icon">🏢</div>
+        <h3>Organization / Corporate</h3>
+        <p>CSR opportunity — sponsor free clinics, donate medicines, fund healthcare services.</p>
+        <div class="rc-perks"><div class="rc-perk">Brand visibility on Suwa Sahaya</div><div class="rc-perk">Sponsor free community clinics</div><div class="rc-perk">Donate medicines or equipment</div><div class="rc-perk">Direct impact on thousands of lives</div></div>
+        <button class="rc-btn" onclick="openModal('org')">Partner With Us →</button>
+      </div>
+      <div class="rc-bottom"><p>Help us reach 1 million Sri Lankans. Every contribution matters enormously.</p></div>
+    </div>
+    <div class="reg-card fu">
+      <div class="rc-top purple">
+        <div class="rc-icon">🏥</div>
+        <h3>Clinic / Health Service</h3>
+        <p>List your clinic, promote free or subsidized services, reach more patients.</p>
+        <div class="rc-perks"><div class="rc-perk">Free listing on Suwa Sahaya directory</div><div class="rc-perk">Reach patients in your district</div><div class="rc-perk">Verified badge for trusted clinics</div><div class="rc-perk">Promote free or subsidized services</div></div>
+        <button class="rc-btn" onclick="openModal('clinic')">List Your Clinic →</button>
+      </div>
+      <div class="rc-bottom"><p>Private, NGO, or government clinics welcome. Help more people find you.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section class="emr-section" id="emergency">
+  <div class="s-head center fu">
+    <div class="s-tag">Always Available</div>
+    <h2 class="s-title">Emergency Contacts</h2>
+  </div>
+  <div class="emr-grid">
+    <a href="tel:1990" class="emr-card fu"><div class="emr-icon">🚑</div><div class="emr-num">1990</div><div class="emr-name">Suwa Seriya Ambulance</div></a>
+    <a href="tel:119" class="emr-card fu"><div class="emr-icon">🚓</div><div class="emr-num">119</div><div class="emr-name">Police / Emergency</div></a>
+    <a href="tel:1926" class="emr-card fu"><div class="emr-icon">🧠</div><div class="emr-num">1926</div><div class="emr-name">Mental Health</div></a>
+    <a href="tel:1979" class="emr-card fu"><div class="emr-icon">🏥</div><div class="emr-num">1979</div><div class="emr-name">Health Info</div></a>
+    <a href="tel:117" class="emr-card fu"><div class="emr-icon">🆘</div><div class="emr-num">117</div><div class="emr-name">Disaster Mgmt</div></a>
+    <a href="tel:1929" class="emr-card fu"><div class="emr-icon">👶</div><div class="emr-num">1929</div><div class="emr-name">Child Protection</div></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">🌿 සුව සහාය — Suwa Sahaya<small>Free AI Healthcare · Sri Lanka · 2026</small></div>
+  <div class="foot-links"><a href="#how">How It Works</a><a href="#portal">Patient Portal</a><a href="#register">Join Us</a><a href="#emergency">Emergency</a></div>
+  <div class="foot-copy">⚠️ Information only — not medical diagnosis.<br>Always consult a qualified doctor.</div>
+</footer>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeModalOut(event)">
+  <div class="modal" id="modal">
+    <div class="modal-hd">
+      <div><h2 id="modalTitle"></h2><p id="modalSub"></p></div>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-bd">
+      <div id="modalForm"></div>
+      <div class="m-success" id="modalSuccess">
+        <div class="m-success-icon">✅</div>
+        <h3>Thank You!</h3>
+        <p id="modalSuccessMsg"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+// SLIDESHOW
+// ══════════════════════════════════════════
+const ssSlides = document.querySelectorAll('.ss-slide');
+const ssDots   = document.getElementById('ssDots');
+let ssIdx = 0;
+ssSlides.forEach((_,i) => {
+  const d = document.createElement('div');
+  d.className = 'ss-dot' + (i===0?' active':'');
+  d.onclick = () => goSlide(i);
+  ssDots.appendChild(d);
+});
+function goSlide(n){
+  ssSlides[ssIdx].classList.remove('active');
+  ssDots.children[ssIdx].classList.remove('active');
+  ssIdx = n;
+  ssSlides[ssIdx].classList.add('active');
+  ssDots.children[ssIdx].classList.add('active');
+}
+setInterval(()=>goSlide((ssIdx+1)%ssSlides.length), 3800);
+
+// ══════════════════════════════════════════
+// NAV
+// ══════════════════════════════════════════
+function toggleNav(){ document.getElementById('navLinks').classList.toggle('open'); }
+document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>document.getElementById('navLinks').classList.remove('open'));
+
+// ══════════════════════════════════════════
+// SCROLL ANIMATIONS
+// ══════════════════════════════════════════
+const obs = new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('vis')),{threshold:.08});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// ══════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════
+function toast(msg, dur=3000){
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), dur);
+}
+
+// ══════════════════════════════════════════
+// API KEY — stored in localStorage, sent to Python backend per request
+// ══════════════════════════════════════════
+const kEl = document.getElementById('apiKey');
+const _storedKey = localStorage.getItem('ss_groq_key');
+if(_storedKey){ kEl.value = _storedKey; }
+
+function saveKey(){
+  const k = kEl.value.trim();
+  if(!k || !k.startsWith('gsk_')){ toast('⚠️ Enter a valid Groq key (starts with gsk_)'); return; }
+  localStorage.setItem('ss_groq_key', k);
+  toast('✅ Groq API key saved!');
+}
+function getKey(){ return localStorage.getItem('ss_groq_key') || kEl.value.trim(); }
+
+// ══════════════════════════════════════════
+// TABS
+// ══════════════════════════════════════════
+function switchTab(name){
+  document.querySelectorAll('.pp-tab').forEach((t,i)=>t.classList.toggle('active',['chat','doctor','report','medicine'][i]===name));
+  document.querySelectorAll('.pp-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(name==='doctor') loadDoctors();
+}
+
+// ══════════════════════════════════════════
+// CHAT
+// ══════════════════════════════════════════
+let chatHist = [];
+function autoGrow(el){ el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,90)+'px'; }
+function chatEnter(e){ if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();} }
+function quickChat(t){ document.getElementById('chatInput').value=t; sendChat(); }
+
+function addMsg(role,text){
+  const box = document.getElementById('chatMsgs');
+  const row = document.createElement('div');
+  row.className = 'cm'+(role==='user'?' user':'');
+  const av = role==='user'?'👤':'🌿';
+  row.innerHTML = `<div class="cm-av ${role==='user'?'usr':'bot'}">${av}</div><div class="cm-bub ${role==='user'?'usr':'bot'}">${fmt(text)}</div>`;
+  box.appendChild(row);
+  box.scrollTop = box.scrollHeight;
+}
+function fmt(t){
+  return t.replace(/\*\*(.*?)\*\*/g,'<b>$1</b>')
+          .replace(/\*(.*?)\*/g,'<em>$1</em>')
+          .replace(/\n/g,'<br>');
+}
+function showTyping(){
+  const box=document.getElementById('chatMsgs');
+  const d=document.createElement('div');
+  d.className='cm';d.id='typing';
+  d.innerHTML=`<div class="cm-av bot">🌿</div><div class="typing-ind"><span></span><span></span><span></span></div>`;
+  box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+function hideTyping(){ const t=document.getElementById('typing');if(t)t.remove(); }
+
+async function sendChat(){
+  const inp = document.getElementById('chatInput');
+  const txt = inp.value.trim();
+  if(!txt) return;
+
+  const key = getKey();
+  if(!key || !key.startsWith('gsk_')){
+    toast('⚠️ Please enter your Groq API key first!');
+    document.getElementById('apiKey').focus();
+    return;
+  }
+
+  addMsg('user', txt);
+  inp.value=''; inp.style.height='auto';
+  showTyping();
+  chatHist.push({role:'user', content:txt});
+  if(chatHist.length>16) chatHist = chatHist.slice(-16);
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ messages: chatHist.slice(-16), api_key: key })
+    });
+    const d = await res.json();
+    hideTyping();
+    if(d.error){ addMsg('bot', '⚠️ Error: '+d.error); return; }
+    chatHist.push({role:'assistant', content: d.reply});
+    addMsg('bot', d.reply);
+  } catch(err){
+    hideTyping();
+    addMsg('bot','⚠️ Connection error. Make sure the Python server is running.\n\nFor urgent help call **1990**.');
+  }
+}
+
+// ══════════════════════════════════════════
+// DOCTOR FINDER
+// ══════════════════════════════════════════
+let selectedDoctor = null;
+let currentDrType  = 'General Physician';
+
+const DOCTORS = [
+  {name:'Dr. Nuwan Perera',spec:'General Physician',district:'Colombo',area:'Colombo 07',days:'Mon;Wed;Fri',time:'6-8 PM',lang:'Sinhala;English',type:'Online & In-Person',phone:'0771234561'},
+  {name:'Dr. Sandya Rajapaksa',spec:'Pediatrician',district:'Kandy',area:'Peradeniya',days:'Sat;Sun',time:'9 AM-1 PM',lang:'Sinhala;English',type:'In-Person',phone:'0712345672'},
+  {name:'Dr. Chaminda Silva',spec:'Cardiologist',district:'Gampaha',area:'Negombo',days:'Tue;Thu',time:'5-7 PM',lang:'Sinhala',type:'Online',phone:'0762345673'},
+  {name:'Dr. Priyanka Fernando',spec:'Dermatologist',district:'Colombo',area:'Colombo 03',days:'Wed;Sat',time:'10 AM-12 PM',lang:'Sinhala;English;Tamil',type:'Online',phone:'0752345674'},
+  {name:'Dr. Amali Wickramasinghe',spec:'Gynecologist',district:'Colombo',area:'Colombo 10',days:'Thu;Sun',time:'2-4 PM',lang:'Sinhala;English',type:'Online & In-Person',phone:'0701234566'},
+  {name:'Dr. Kasun Jayawardena',spec:'Neurologist',district:'Kandy',area:'Kandy City',days:'Saturday',time:'9 AM-12 PM',lang:'Sinhala;English',type:'Online',phone:'0771234567'},
+  {name:'Dr. Thilini Samarawickrama',spec:'Psychiatrist',district:'Colombo',area:'Colombo 05',days:'Mon;Thu;Sat',time:'7-9 PM',lang:'Sinhala;English',type:'Online',phone:'0752345680'},
+  {name:'Dr. Nadeeka Peiris',spec:'Diabetologist',district:'Colombo',area:'Colombo 08',days:'Tue;Sat',time:'10 AM-1 PM',lang:'Sinhala;English',type:'Online & In-Person',phone:'0701234572'},
+  {name:'Dr. Dilrukshi Bandara',spec:'ENT Specialist',district:'Kurunegala',area:'Kurunegala Town',days:'Tue;Fri',time:'5:30-7:30 PM',lang:'Sinhala',type:'In-Person',phone:'0712345678'},
+  {name:'Dr. Manoj Gunasekara',spec:'Orthopedic Surgeon',district:'Galle',area:'Galle City',days:'Wed;Sun',time:'10 AM-1 PM',lang:'Sinhala;English',type:'Online',phone:'0762345679'},
+  {name:'Dr. Rohan Dissanayake',spec:'General Physician',district:'Ratnapura',area:'Ratnapura Town',days:'Mon;Fri',time:'4-6 PM',lang:'Sinhala',type:'In-Person',phone:'0722345675'},
+  {name:'Dr. Buddhika Ranasinghe',spec:'General Physician',district:'Anuradhapura',area:'Anuradhapura Town',days:'Mon;Wed;Fri',time:'5-7 PM',lang:'Sinhala',type:'In-Person',phone:'0722345681'},
+  {name:'Dr. Saman Herath',spec:'Pulmonologist',district:'Matara',area:'Matara Town',days:'Fri;Sun',time:'4-6 PM',lang:'Sinhala',type:'In-Person',phone:'0771234573'},
+  {name:'Dr. Isuri Karunaratne',spec:'General Physician',district:'Badulla',area:'Badulla Town',days:'Sat;Sun',time:'9 AM-12 PM',lang:'Sinhala;Tamil',type:'In-Person',phone:'0712345674'},
+  {name:'Dr. Ravindu Silva',spec:'General Physician',district:'Jaffna',area:'Jaffna City',days:'Sat;Sun',time:'9 AM-12 PM',lang:'Tamil;Sinhala;English',type:'In-Person',phone:'0701234708'},
+  {name:'Dr. Asela Fernando',spec:'General Physician',district:'Trincomalee',area:'Trincomalee Town',days:'Mon;Thu',time:'4-6 PM',lang:'Sinhala;Tamil;English',type:'In-Person',phone:'0722345701'},
+  {name:'Dr. Manori Bandara',spec:'General Physician',district:'Badulla',area:'Badulla Town',days:'Mon;Wed;Fri',time:'4-6 PM',lang:'Sinhala;Tamil',type:'In-Person',phone:'0712345710'},
+  {name:'Dr. Vindya Colambage',spec:'Psychiatrist',district:'Colombo',area:'Colombo 03',days:'Mon;Thu',time:'7-9 PM',lang:'Sinhala;English',type:'Online',phone:'0712345686'},
+  {name:'Dr. Nishadi Ekanayake',spec:'Psychiatrist',district:'Colombo',area:'Colombo 03',days:'Mon;Wed;Fri',time:'7-9 PM',lang:'Sinhala;English',type:'Online',phone:'0712345704'},
+  {name:'Dr. Kushani Dias',spec:'Gynecologist',district:'Kurunegala',area:'Kurunegala Town',days:'Mon;Thu',time:'5-7 PM',lang:'Sinhala',type:'In-Person',phone:'0701234584'},
+  {name:'Dr. Iresha Liyanage',spec:'Diabetologist',district:'Gampaha',area:'Gampaha Town',days:'Wed;Sat',time:'10 AM-1 PM',lang:'Sinhala;English',type:'Online & In-Person',phone:'0712345692'},
+  {name:'Dr. Chamari Alwis',spec:'Pediatrician',district:'Galle',area:'Galle City',days:'Sat;Sun',time:'9 AM-12 PM',lang:'Sinhala;English',type:'In-Person',phone:'0712345680'},
+  {name:'Dr. Kavindya Jayawickrama',spec:'Pediatrician',district:'Anuradhapura',area:'Anuradhapura Town',days:'Sat;Sun',time:'9 AM-12 PM',lang:'Sinhala',type:'In-Person',phone:'0771234597'},
+  {name:'Dr. Ruwan Senanayake',spec:'Cardiologist',district:'Colombo',area:'Colombo 04',days:'Thu;Sat',time:'6-8 PM',lang:'Sinhala;English',type:'Online',phone:'0762345681'},
+  {name:'Dr. Hiruni Perera',spec:'Cardiologist',district:'Colombo',area:'Colombo 02',days:'Wed;Sat',time:'6-8 PM',lang:'Sinhala;English',type:'Online',phone:'0722345707'},
+  {name:'Dr. Asanka Wijesinghe',spec:'Neurologist',district:'Colombo',area:'Colombo 07',days:'Wed;Sat',time:'10 AM-12 PM',lang:'Sinhala;English',type:'Online',phone:'0722345683'},
+  {name:'Dr. Malsha Jayasena',spec:'Endocrinologist',district:'Kandy',area:'Kandy City',days:'Wed;Sun',time:'2-5 PM',lang:'Sinhala;English',type:'Online',phone:'0701234578'},
+  {name:'Dr. Vimukthi Wickrema',spec:'Endocrinologist',district:'Colombo',area:'Colombo 07',days:'Mon;Fri',time:'6-8 PM',lang:'Sinhala;English',type:'Online',phone:'0762345699'},
+  {name:'Dr. Nimali Rajapaksha',spec:'Dermatologist',district:'Matara',area:'Matara Town',days:'Tue;Fri',time:'5-7 PM',lang:'Sinhala',type:'In-Person',phone:'0752345682'},
+  {name:'Dr. Chami Pieris',spec:'Dermatologist',district:'Kandy',area:'Kandy City',days:'Tue;Sat',time:'10 AM-12 PM',lang:'Sinhala;English',type:'Online & In-Person',phone:'0701234702'},
+];
+
+function selectDrType(btn, type){
+  document.querySelectorAll('.dr-type-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentDrType = type;
+  loadDoctors();
+}
+
+function loadDoctors(){
+  const district = document.getElementById('drDistrict').value.toLowerCase();
+  let filtered = DOCTORS.filter(d=>{
+    const specMatch = !currentDrType || d.spec.toLowerCase().includes(currentDrType.toLowerCase());
+    const distMatch = !district || d.district.toLowerCase().includes(district);
+    return specMatch && distMatch;
+  });
+
+  const box = document.getElementById('drResults');
+  if(!filtered.length){ box.innerHTML=`<div style="text-align:center;padding:20px;color:rgba(255,255,255,.3);font-size:.8em;">No doctors found for this filter. Try a different specialization or district.</div>`; return; }
+
+  box.innerHTML = filtered.slice(0,8).map((d,i)=>`
+    <div class="dr-card" id="drc-${i}" onclick="selectDoctor(${i},'${d.name}','${d.spec}','${d.phone}')">
+      <div class="dr-card-top">
+        <div class="dr-name">${d.name}</div>
+        <div class="dr-spec">${d.spec}</div>
+      </div>
+      <div class="dr-detail">📍 ${d.area}, ${d.district} &nbsp;|&nbsp; ${d.type}</div>
+      <div class="dr-avail">⏰ ${d.days.replace(/;/g,', ')} · ${d.time} &nbsp;|&nbsp; 🌐 ${d.lang.replace(/;/g,', ')}</div>
+    </div>
+  `).join('');
+}
+
+function selectDoctor(idx, name, spec, phone){
+  document.querySelectorAll('.dr-card').forEach(c=>c.classList.remove('selected'));
+  const card = document.getElementById('drc-'+idx);
+  if(card) card.classList.add('selected');
+  selectedDoctor = {name, spec, phone};
+  const sec = document.getElementById('sendDrSection');
+  const pill = document.getElementById('selectedDrPill');
+  sec.style.display='block';
+  pill.textContent = `${name} · ${spec}`;
+  sec.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function sendToDoctor(){
+  if(!selectedDoctor){ toast('⚠️ Please select a doctor first'); return; }
+  const reason = document.getElementById('consultReason').value.trim();
+  const phone = document.getElementById('patientPhone').value.trim();
+  if(!reason){ toast('⚠️ Please describe your health issue'); return; }
+
+  // Get patient report if saved
+  const report = JSON.parse(localStorage.getItem('ss_patient')||'{}');
+  const hasReport = report.name;
+
+  toast(`✅ Request sent to ${selectedDoctor.name}! They will contact you on WhatsApp: ${selectedDoctor.phone}`);
+  document.getElementById('consultReason').value='';
+  document.getElementById('patientPhone').value='';
+  selectedDoctor=null;
+  document.querySelectorAll('.dr-card').forEach(c=>c.classList.remove('selected'));
+  document.getElementById('sendDrSection').style.display='none';
+}
+
+// ══════════════════════════════════════════
+// PATIENT REPORTS
+// ══════════════════════════════════════════
+let uploadedFiles = [];
+
+function handleFiles(files){
+  Array.from(files).forEach(f=>{
+    if(!uploadedFiles.find(u=>u.name===f.name)){
+      uploadedFiles.push(f);
+      renderFiles();
+    }
+  });
+}
+
+function renderFiles(){
+  const box = document.getElementById('uploadedFiles');
+  box.innerHTML = uploadedFiles.map((f,i)=>`
+    <div class="uf-item">
+      <span style="font-size:.9em">${f.type.includes('pdf')?'📄':f.type.includes('image')?'🖼️':'📎'}</span>
+      <span class="uf-item-name">${f.name}</span>
+      <span style="font-size:.72em;color:rgba(255,255,255,.3)">${(f.size/1024).toFixed(0)}KB</span>
+      <button class="uf-item-remove" onclick="removeFile(${i})">✕</button>
+    </div>
+  `).join('');
+}
+
+function removeFile(i){ uploadedFiles.splice(i,1); renderFiles(); }
+
+function saveReport(){
+  const data={
+    name:document.getElementById('ptName').value,
+    age:document.getElementById('ptAge').value,
+    gender:document.getElementById('ptGender').value,
+    blood:document.getElementById('ptBlood').value,
+    conditions:document.getElementById('ptConditions').value,
+    meds:document.getElementById('ptMeds').value,
+    files:uploadedFiles.map(f=>f.name),
+    saved:new Date().toLocaleString()
+  };
+  if(!data.name){ toast('⚠️ Please enter patient name'); return; }
+  localStorage.setItem('ss_patient', JSON.stringify(data));
+  toast('✅ Health profile saved! Doctors can receive this when you send a request.');
+}
+
+function clearReport(){
+  if(!confirm('Clear all health profile data?')) return;
+  ['ptName','ptAge','ptConditions','ptMeds'].forEach(id=>document.getElementById(id).value='');
+  ['ptGender','ptBlood'].forEach(id=>document.getElementById(id).value='');
+  uploadedFiles=[];
+  renderFiles();
+  localStorage.removeItem('ss_patient');
+  toast('🗑️ Health profile cleared.');
+}
+
+// Load saved report
+const savedReport = JSON.parse(localStorage.getItem('ss_patient')||'null');
+if(savedReport){
+  setTimeout(()=>{
+    if(savedReport.name) document.getElementById('ptName').value=savedReport.name||'';
+    if(savedReport.age) document.getElementById('ptAge').value=savedReport.age||'';
+    if(savedReport.gender) document.getElementById('ptGender').value=savedReport.gender||'';
+    if(savedReport.blood) document.getElementById('ptBlood').value=savedReport.blood||'';
+    if(savedReport.conditions) document.getElementById('ptConditions').value=savedReport.conditions||'';
+    if(savedReport.meds) document.getElementById('ptMeds').value=savedReport.meds||'';
+  },100);
+}
+
+// ══════════════════════════════════════════
+// MEDICINE SEARCH (client-side)
+// ══════════════════════════════════════════
+const MEDS=[
+  {brand:'Panadol',generic:'Paracetamol',condition:'Fever & Pain',bprice:45,gprice:5,free:'Yes'},
+  {brand:'Brufen',generic:'Ibuprofen',condition:'Pain & Inflammation',bprice:85,gprice:8,free:'Yes'},
+  {brand:'Augmentin',generic:'Amoxicillin',condition:'Bacterial Infections',bprice:380,gprice:45,free:'Yes'},
+  {brand:'Glucophage',generic:'Metformin',condition:'Diabetes Type 2',bprice:340,gprice:12,free:'Yes'},
+  {brand:'Lipitor',generic:'Atorvastatin',condition:'High Cholesterol',bprice:1200,gprice:35,free:'Yes'},
+  {brand:'Norvasc',generic:'Amlodipine',condition:'High Blood Pressure',bprice:560,gprice:18,free:'Yes'},
+  {brand:'Ventolin',generic:'Salbutamol Inhaler',condition:'Asthma',bprice:450,gprice:120,free:'Yes'},
+  {brand:'Zyrtec',generic:'Cetirizine',condition:'Allergies',bprice:95,gprice:8,free:'No'},
+  {brand:'Losec',generic:'Omeprazole',condition:'Acidity & Ulcers',bprice:220,gprice:15,free:'Yes'},
+  {brand:'Flagyl',generic:'Metronidazole',condition:'Gut Infections',bprice:95,gprice:10,free:'Yes'},
+  {brand:'Zithromax',generic:'Azithromycin',condition:'Respiratory Infections',bprice:480,gprice:35,free:'Yes'},
+  {brand:'Voltaren',generic:'Diclofenac',condition:'Joint Pain & Arthritis',bprice:160,gprice:12,free:'Yes'},
+  {brand:'Lasix',generic:'Furosemide',condition:'Fluid Retention',bprice:95,gprice:8,free:'Yes'},
+  {brand:'Clopidogrel',generic:'Clopidogrel',condition:'Heart Attack Prevention',bprice:680,gprice:35,free:'Yes'},
+  {brand:'Aspirin Low Dose',generic:'Aspirin 75mg',condition:'Heart Prevention',bprice:95,gprice:5,free:'No'},
+  {brand:'ORS / Jeevani',generic:'Oral Rehydration Salts',condition:'Dehydration & Diarrhea',bprice:45,gprice:8,free:'Yes'},
+  {brand:'Pantoloc',generic:'Pantoprazole',condition:'Acid Reflux',bprice:380,gprice:18,free:'Yes'},
+  {brand:'Claritine',generic:'Loratadine',condition:'Allergies',bprice:180,gprice:10,free:'No'},
+  {brand:'Atenolol',generic:'Atenolol',condition:'High Blood Pressure',bprice:190,gprice:10,free:'Yes'},
+  {brand:'Carbamazepine',generic:'Carbamazepine',condition:'Epilepsy',bprice:320,gprice:18,free:'Yes'},
+];
+
+function searchMeds(q){
+  const box=document.getElementById('medResults');
+  if(!q.trim()){ box.innerHTML=''; return; }
+  const ql=q.toLowerCase();
+  const hits=MEDS.filter(m=>
+    m.brand.toLowerCase().includes(ql)||
+    m.generic.toLowerCase().includes(ql)||
+    m.condition.toLowerCase().includes(ql)
+  );
+  if(!hits.length){ box.innerHTML=`<div style="text-align:center;padding:16px;color:rgba(255,255,255,.3);font-size:.8em;">No matches found. Try another name or condition.</div>`; return; }
+  box.innerHTML=hits.map(m=>{
+    const save=m.bprice-m.gprice;
+    const pct=Math.round(save/m.bprice*100);
+    return `<div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+        <span style="font-size:.85em;font-weight:600;color:#fff;">${m.brand}</span>
+        <span style="font-size:.68em;background:rgba(42,157,111,.2);color:var(--g5);padding:2px 8px;border-radius:10px;">${m.condition}</span>
+      </div>
+      <div style="font-size:.76em;color:rgba(255,255,255,.55);margin-bottom:8px;">Generic: <b style="color:rgba(255,255,255,.8)">${m.generic}</b></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <span style="font-size:.75em;color:rgba(255,255,255,.4);">Branded: <s>Rs. ${m.bprice}</s></span>
+        <span style="font-size:.82em;font-weight:700;color:var(--g5);">Generic: Rs. ${m.gprice}</span>
+        <span style="font-size:.72em;background:rgba(34,197,94,.15);color:#4ade80;padding:2px 8px;border-radius:8px;">Save ${pct}%</span>
+        ${m.free==='Yes'?'<span style="font-size:.7em;background:rgba(42,157,111,.15);color:var(--g5);padding:2px 8px;border-radius:8px;">FREE at Govt Hospital</span>':''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// MODAL FORMS
+// ══════════════════════════════════════════
+const DISTRICTS='<option value="">Select District</option><option>Colombo</option><option>Gampaha</option><option>Kandy</option><option>Galle</option><option>Matara</option><option>Kurunegala</option><option>Anuradhapura</option><option>Ratnapura</option><option>Badulla</option><option>Jaffna</option><option>Batticaloa</option><option>Trincomalee</option><option>Hambantota</option><option>Matale</option><option>Nuwara Eliya</option><option>Polonnaruwa</option><option>Ampara</option><option>Kegalle</option>';
+
+const MODAL_DATA={
+  doctor:{
+    title:'Register as Volunteer Doctor',
+    sub:'Join 50+ doctors giving free healthcare',
+    form:`
+      <div class="mfg-row"><div class="mfg"><label>Full Name with Title</label><input placeholder="Dr. Nuwan Perera"></div><div class="mfg"><label>Specialization</label><select><option>General Physician</option><option>Pediatrician</option><option>Cardiologist</option><option>Gynecologist</option><option>Neurologist</option><option>Dermatologist</option><option>Psychiatrist</option><option>Orthopedic Surgeon</option><option>ENT Specialist</option><option>Ophthalmologist</option><option>Diabetologist</option><option>Gastroenterologist</option><option>Pulmonologist</option><option>Other</option></select></div></div>
+      <div class="mfg-row"><div class="mfg"><label>Phone / WhatsApp</label><input type="tel" placeholder="077 XXX XXXX"></div><div class="mfg"><label>Email</label><input type="email" placeholder="doctor@email.com"></div></div>
+      <div class="mfg-row"><div class="mfg"><label>District</label><select>${DISTRICTS}</select></div><div class="mfg"><label>Town / Area</label><input placeholder="Colombo 07"></div></div>
+      <div class="mfg-row"><div class="mfg"><label>Available Days</label><input placeholder="Mon, Wed, Fri"></div><div class="mfg"><label>Available Hours</label><input placeholder="6:00 PM - 8:00 PM"></div></div>
+      <div class="mfg-row"><div class="mfg"><label>Consultation Type</label><select><option>Online Only</option><option>In-Person Only</option><option>Both</option></select></div><div class="mfg"><label>Languages</label><select><option>Sinhala</option><option>Sinhala & English</option><option>Tamil</option><option>Tamil & English</option><option>All Three</option></select></div></div>
+      <div class="mfg"><label>Notes (optional)</label><textarea placeholder="Special focus areas, max patients per day, etc."></textarea></div>
+      <button class="m-submit" onclick="submitModal('doctor')">🌿 Register as Volunteer Doctor</button>`,
+    success:'Thank you for volunteering! Your profile will be reviewed and added within 24 hours. You will be contacted via email to confirm.'
+  },
+  org:{
+    title:'Partner Organization',
+    sub:'Help us reach 1 million Sri Lankans in need',
+    form:`
+      <div class="mfg"><label>Organization Name</label><input placeholder="Your organization"></div>
+      <div class="mfg-row"><div class="mfg"><label>Contact Person</label><input placeholder="Full name"></div><div class="mfg"><label>Designation</label><input placeholder="CSR Manager"></div></div>
+      <div class="mfg-row"><div class="mfg"><label>Phone</label><input type="tel" placeholder="011 XXX XXXX"></div><div class="mfg"><label>Email</label><input type="email" placeholder="contact@org.com"></div></div>
+      <div class="mfg"><label>Type of Support</label><select><option>Sponsor Free Clinics</option><option>Donate Medicines</option><option>Fund Healthcare Services</option><option>Provide Medical Equipment</option><option>Multiple Types</option></select></div>
+      <div class="mfg"><label>Districts to Cover</label><input placeholder="e.g. Colombo, Gampaha, Kandy"></div>
+      <div class="mfg"><label>About Your Initiative</label><textarea placeholder="Describe how you would like to contribute..."></textarea></div>
+      <button class="m-submit" onclick="submitModal('org')">🏢 Submit Partnership Request</button>`,
+    success:'Thank you for your generous interest! Our team will contact you within 48 hours to discuss how we can work together.'
+  },
+  clinic:{
+    title:'List Your Clinic',
+    sub:'Reach thousands of patients in your area',
+    form:`
+      <div class="mfg"><label>Clinic / Hospital Name</label><input placeholder="Clinic name"></div>
+      <div class="mfg-row"><div class="mfg"><label>Type</label><select><option>Private Clinic</option><option>Government Hospital</option><option>NGO Health Center</option><option>Community Clinic</option><option>Specialist Center</option></select></div><div class="mfg"><label>District</label><select>${DISTRICTS}</select></div></div>
+      <div class="mfg"><label>Address</label><input placeholder="Full address"></div>
+      <div class="mfg-row"><div class="mfg"><label>Phone</label><input type="tel" placeholder="011 XXX XXXX"></div><div class="mfg"><label>OPD Hours</label><input placeholder="7:00 AM - 5:00 PM"></div></div>
+      <div class="mfg"><label>Services Offered</label><textarea placeholder="General Medicine, Pediatrics, Cardiology..."></textarea></div>
+      <div class="mfg"><label>Free / Subsidized Services</label><textarea placeholder="Describe any free or discounted services..."></textarea></div>
+      <div class="mfg"><label>24-Hour Emergency?</label><select><option>Yes - 24/7 Emergency</option><option>No - OPD Hours Only</option></select></div>
+      <button class="m-submit" onclick="submitModal('clinic')">🏥 List My Clinic</button>`,
+    success:'Your clinic listing has been submitted! It will be reviewed and added to the directory within 24 hours.'
+  }
+};
+
+function openModal(type){
+  const m=MODAL_DATA[type];
+  document.getElementById('modalTitle').textContent=m.title;
+  document.getElementById('modalSub').textContent=m.sub;
+  document.getElementById('modalForm').innerHTML=m.form;
+  document.getElementById('modalForm').style.display='block';
+  document.getElementById('modalSuccess').style.display='none';
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('modal').dataset.type=type;
+}
+function closeModal(){ document.getElementById('overlay').classList.remove('open'); document.body.style.overflow=''; }
+function closeModalOut(e){ if(e.target===document.getElementById('overlay')) closeModal(); }
+function submitModal(type){
+  document.getElementById('modalForm').style.display='none';
+  document.getElementById('modalSuccess').style.display='block';
+  document.getElementById('modalSuccessMsg').textContent=MODAL_DATA[type].success;
+}
+
+// Init
+loadDoctors();
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+id,hospital_name,type,district,address,phone,emergency_24hr,services,free_opd,opd_hours,notes
+1,Colombo National Hospital,Teaching Hospital,Colombo,Regent Street Colombo 08,0112691111,Yes,General Medicine;Surgery;Pediatrics;Cardiology;Neurology;Oncology;Orthopedics;ENT;Ophthalmology,Yes,07:00-17:00,Largest government hospital in Sri Lanka
+2,Karapitiya Teaching Hospital,Teaching Hospital,Galle,Karapitiya Galle,0912222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology;Orthopedics;ENT,Yes,07:00-17:00,Southern province main hospital
+3,Peradeniya Teaching Hospital,Teaching Hospital,Kandy,Hospital Road Peradeniya,0812388001,Yes,General Medicine;Surgery;Neurology;Cardiology;Pediatrics;Orthopedics,Yes,07:00-17:00,Central province main referral hospital
+4,Jaffna Teaching Hospital,Teaching Hospital,Jaffna,Hospital Road Jaffna,0212222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-17:00,Northern province main hospital
+5,Anuradhapura Teaching Hospital,Teaching Hospital,Anuradhapura,Rowing Club Road Anuradhapura,0252222261,Yes,General Medicine;Surgery;Pediatrics;Orthopedics,Yes,07:00-17:00,North Central province referral hospital
+6,Ratnapura General Hospital,General Hospital,Ratnapura,Dharmapala Mawatha Ratnapura,0452222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology;Orthopedics,Yes,07:00-16:00,Sabaragamuwa province main hospital
+7,Kurunegala Teaching Hospital,Teaching Hospital,Kurunegala,Kurunegala,0372222261,Yes,General Medicine;Surgery;Cardiology;Neurology;Pediatrics,Yes,07:00-17:00,North Western province main hospital
+8,Badulla General Hospital,General Hospital,Badulla,Badulla,0552222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Uva province main hospital
+9,Matara General Hospital,General Hospital,Matara,Matara,0412222261,Yes,General Medicine;Surgery;Pediatrics;Orthopedics,Yes,07:00-16:00,Southern province district hospital
+10,Negombo General Hospital,General Hospital,Gampaha,Negombo,0312222261,Yes,General Medicine;Surgery;Pediatrics;ENT,Yes,07:00-16:00,Western province North district hospital
+11,Lady Ridgeway Children Hospital,Specialized Hospital,Colombo,Baseline Road Colombo 08,0112693611,Yes,Pediatrics;Neonatology;Pediatric Surgery;Child Psychiatry,Yes,Open 24hrs,Only dedicated children hospital in Sri Lanka
+12,De Soysa Maternity Hospital,Specialized Hospital,Colombo,Kynsey Road Colombo 08,0112695411,Yes,Obstetrics;Gynecology;Neonatology,Yes,Open 24hrs,Free maternity services for all Sri Lankan women
+13,Castle Street Hospital for Women,Specialized Hospital,Colombo,Castle Street Colombo 08,0112691111,Yes,Gynecology;Obstetrics;Family Planning,Yes,07:00-17:00,Free women health services
+14,Apeksha Cancer Hospital,Specialized Hospital,Colombo,Maharagama,0112850441,Yes,Oncology;Chemotherapy;Radiotherapy,Yes,07:00-17:00,Free cancer treatment for all Sri Lankans
+15,Nagoda General Hospital,General Hospital,Kalutara,Nagoda Kalutara,0342222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Western province South district hospital
+16,Polonnaruwa General Hospital,General Hospital,Polonnaruwa,Polonnaruwa,0272222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,North Central province district hospital
+17,Trincomalee General Hospital,General Hospital,Trincomalee,Trincomalee,0262222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Eastern province district hospital
+18,Batticaloa Teaching Hospital,Teaching Hospital,Batticaloa,Batticaloa,0652222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-17:00,Eastern province main referral hospital
+19,Hambantota General Hospital,General Hospital,Hambantota,Hambantota,0472222261,Yes,General Medicine;Surgery;Pediatrics;Orthopedics,Yes,07:00-16:00,Southern province Hambantota district
+20,Vavuniya General Hospital,General Hospital,Vavuniya,Vavuniya,0242222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Northern province district hospital
+21,Mannar General Hospital,General Hospital,Mannar,Mannar,0232222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Northwestern coastal district hospital
+22,Mullaitivu General Hospital,General Hospital,Mullaitivu,Mullaitivu,0212290261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Post-war rebuilt hospital Northern province
+23,Kilinochchi General Hospital,General Hospital,Kilinochchi,Kilinochchi,0212285261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Northern province district hospital
+24,Puttalam General Hospital,General Hospital,Puttalam,Puttalam,0322222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,North Western province coastal district
+25,Chilaw General Hospital,General Hospital,Puttalam,Chilaw,0322224261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Puttalam district sub hospital
+26,Kegalle General Hospital,General Hospital,Kegalle,Kegalle,0352222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Sabaragamuwa province Kegalle district
+27,Avissawella General Hospital,General Hospital,Colombo,Avissawella,0362222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Colombo district sub hospital
+28,Homagama Base Hospital,Base Hospital,Colombo,Homagama,0112855261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-17:00,Colombo suburban area hospital
+29,Kalubowila Teaching Hospital,Teaching Hospital,Colombo,Kalubowila Dehiwala,0112717777,Yes,General Medicine;Surgery;Cardiology;Neurology,Yes,07:00-17:00,South Colombo major teaching hospital
+30,Ragama Teaching Hospital,Teaching Hospital,Gampaha,Ragama,0112959261,Yes,General Medicine;Surgery;Orthopedics;ENT,Yes,07:00-17:00,North Colombo major teaching hospital
+31,Wathupitiwala Base Hospital,Base Hospital,Gampaha,Wathupitiwala,0332222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Gampaha district sub hospital
+32,Gampaha General Hospital,General Hospital,Gampaha,Gampaha,0332261261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Gampaha district main hospital
+33,Ampara General Hospital,General Hospital,Ampara,Ampara,0632222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Eastern province Ampara district
+34,Monaragala General Hospital,General Hospital,Monaragala,Monaragala,0552276261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Uva province Monaragala district
+35,Nuwara Eliya General Hospital,General Hospital,Nuwara Eliya,Nuwara Eliya,0522222261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Hill country main hospital
+36,Kandy General Hospital,General Hospital,Kandy,Kandy City,0812222261,Yes,General Medicine;Surgery;ENT;Ophthalmology,Yes,07:00-16:00,Kandy city district hospital
+37,Matale General Hospital,General Hospital,Matale,Matale,0662222261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Central province Matale district
+38,Dambulla Base Hospital,Base Hospital,Matale,Dambulla,0662284261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-17:00,Dambulla cultural triangle area hospital
+39,Narahenpita Mental Health Hospital,Specialized Hospital,Colombo,Narahenpita Colombo 05,0112368261,Yes,Psychiatry;Mental Health;Addiction,Yes,07:00-17:00,National mental health hospital free services
+40,Angoda Mental Health Hospital,Specialized Hospital,Colombo,Angoda,0112533261,Yes,Psychiatry;Long Term Mental Health Care,Yes,07:00-17:00,Long term psychiatric care hospital
+41,Eye Hospital Colombo,Specialized Hospital,Colombo,Deans Road Colombo 10,0112691111,Yes,Ophthalmology;Eye Surgery;Cataract,Yes,07:00-17:00,National eye hospital free services
+42,Dental Institute Colombo,Specialized Hospital,Colombo,Ward Place Colombo 07,0112695357,No,Dental Surgery;Orthodontics;Oral Medicine,Yes,07:00-16:00,National dental hospital free services
+43,Chest Hospital Welisara,Specialized Hospital,Gampaha,Welisara,0112221261,Yes,Pulmonology;TB Treatment;Respiratory,Yes,07:00-17:00,National chest diseases hospital
+44,Rheumatology Hospital Colombo,Specialized Hospital,Colombo,Colombo 08,0112691111,No,Rheumatology;Arthritis;Autoimmune Diseases,Yes,07:00-16:00,Specialist arthritis and joint disease care
+45,Institute of Cardiology Colombo,Specialized Hospital,Colombo,Colombo 08,0112691111,Yes,Cardiology;Cardiac Surgery;Catheterization,Yes,07:00-17:00,National cardiac institute attached to CNH
+46,Sirimavo Bandaranaike Children Hospital,Teaching Hospital,Kandy,Kandy,0812222261,Yes,Pediatrics;Neonatology;Pediatric Surgery,Yes,Open 24hrs,Central province children hospital
+47,Tangalle General Hospital,General Hospital,Hambantota,Tangalle,0472240261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Coastal southern district hospital
+48,Weligama Base Hospital,Base Hospital,Matara,Weligama,0412250261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Matara district sub hospital
+49,Point Pedro Base Hospital,Base Hospital,Jaffna,Point Pedro,0212265261,Yes,General Medicine;Surgery;Pediatrics,Yes,07:00-16:00,Northern tip district hospital
+50,Kalawanchikudy Base Hospital,Base Hospital,Batticaloa,Kalawanchikudy,0652224261,Yes,General Medicine;Surgery;Pediatrics;Gynecology,Yes,07:00-16:00,Batticaloa district coastal sub hospital

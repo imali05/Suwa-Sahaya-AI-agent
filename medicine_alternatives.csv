@@ -1,0 +1,51 @@
+id,brand_name,generic_name,condition,category,branded_price_LKR,generic_price_LKR,free_at_government_hospital,prescription_required,notes
+1,Panadol,Paracetamol,Fever & Pain,Analgesic,45,5,Yes,No,Most widely available generic in all pharmacies
+2,Augmentin,Amoxicillin + Clavulanate,Bacterial Infections,Antibiotic,380,45,Yes,Yes,Generic amoxicillin alone works for mild infections
+3,Brufen,Ibuprofen,Pain & Inflammation,NSAID,85,8,Yes,No,Take with food to avoid stomach upset
+4,Losec,Omeprazole,Acidity & Ulcers,PPI,220,15,Yes,No,Available as generic at most pharmacies
+5,Lipitor,Atorvastatin,High Cholesterol,Statin,1200,35,Yes,Yes,Generic fully equivalent to branded version
+6,Glucophage,Metformin,Diabetes Type 2,Antidiabetic,340,12,Yes,Yes,First-line diabetes medication widely available
+7,Norvasc,Amlodipine,High Blood Pressure,Calcium Channel Blocker,560,18,Yes,Yes,Widely available generic at government hospitals
+8,Zyrtec,Cetirizine,Allergies,Antihistamine,95,8,Yes,No,Generic works identical to branded version
+9,Ventolin,Salbutamol Inhaler,Asthma,Bronchodilator,450,120,Yes,Yes,Free at government hospitals for asthma patients
+10,Amitriptyline,Amitriptyline,Depression & Nerve Pain,Antidepressant,180,15,Yes,Yes,Older but effective antidepressant widely available
+11,Doxycycline,Doxycycline,Infections & Acne,Antibiotic,320,25,Yes,Yes,Effective broad spectrum antibiotic
+12,Diflucan,Fluconazole,Fungal Infections,Antifungal,650,35,Yes,Yes,Single dose treatment for common fungal infections
+13,Prednisolone,Prednisolone,Inflammation & Allergy,Corticosteroid,85,10,Yes,Yes,Short courses safe under doctor guidance
+14,Pantoloc,Pantoprazole,Acid Reflux,PPI,380,18,Yes,Yes,Alternative to omeprazole equally effective
+15,Zinc Sulfate,Zinc Sulfate,Immunity & Wound Healing,Supplement,220,25,No,No,Available at most pharmacies cheaply
+16,Celin,Ascorbic Acid,Immunity Boost,Supplement,180,15,No,No,Generic vitamin C identical in effect
+17,Jeevani ORS,Oral Rehydration Salts,Dehydration & Diarrhea,Electrolyte,45,15,Yes,No,Free at all government health centers
+18,Folic Acid,Folic Acid,Pregnancy Support,Vitamin,120,8,Yes,No,Essential for pregnant mothers free at clinics
+19,Ferrous Sulfate,Ferrous Sulfate,Iron Deficiency Anemia,Iron Supplement,180,12,Yes,No,Free at government hospitals for anemia
+20,Flagyl,Metronidazole,Gut Infections & Amoeba,Antibiotic,95,10,Yes,Yes,Very effective for stomach infections
+21,Zithromax,Azithromycin,Respiratory Infections,Antibiotic,480,35,Yes,Yes,Common alternative to penicillin
+22,Voltaren,Diclofenac,Joint Pain & Arthritis,NSAID,160,12,Yes,Yes,Available as gel or tablet form
+23,Claritine,Loratadine,Seasonal Allergies,Antihistamine,180,10,No,No,Non-drowsy antihistamine widely available
+24,Lasix,Furosemide,Fluid Retention & Heart Failure,Diuretic,95,8,Yes,Yes,Essential medicine available at government hospitals
+25,Digoxin,Digoxin,Heart Failure,Cardiac Glycoside,320,20,Yes,Yes,Free at government hospitals for cardiac patients
+26,Warfarin,Warfarin,Blood Clots & Atrial Fibrillation,Anticoagulant,280,18,Yes,Yes,Requires regular INR monitoring
+27,Atenolol,Atenolol,High Blood Pressure & Angina,Beta Blocker,190,10,Yes,Yes,Very affordable generic widely available
+28,Ramipril,Ramipril,High Blood Pressure & Heart Failure,ACE Inhibitor,420,22,Yes,Yes,Protects kidneys in diabetic patients
+29,Simvastatin,Simvastatin,High Cholesterol,Statin,380,15,Yes,Yes,Cheaper alternative to atorvastatin
+30,Glibenclamide,Glibenclamide,Diabetes Type 2,Sulphonylurea,95,8,Yes,Yes,Oldest diabetes drug very affordable
+31,Hydrocortisone Cream,Hydrocortisone,Skin Inflammation & Eczema,Topical Steroid,220,25,No,No,Available OTC at pharmacies
+32,Chlorpheniramine,Chlorpheniramine,Cold & Allergies,Antihistamine,45,5,Yes,No,Very cheap effective antihistamine
+33,Tetracycline,Tetracycline,Bacterial Infections & Acne,Antibiotic,120,12,Yes,Yes,Avoid in children under 8 and pregnant women
+34,Cotrimoxazole,Cotrimoxazole,Urinary & Respiratory Infections,Antibiotic,85,8,Yes,Yes,Very affordable broad spectrum antibiotic
+35,Nifedipine,Nifedipine,High Blood Pressure & Angina,Calcium Channel Blocker,180,12,Yes,Yes,Available at government hospitals
+36,Spironolactone,Spironolactone,Fluid Retention & Heart Failure,Diuretic,280,20,Yes,Yes,Also used for PCOS and hormonal acne
+37,Carbamazepine,Carbamazepine,Epilepsy & Nerve Pain,Anticonvulsant,320,18,Yes,Yes,Free at government hospitals for epilepsy
+38,Phenytoin,Phenytoin,Epilepsy,Anticonvulsant,180,12,Yes,Yes,Older epilepsy drug very affordable
+39,Haloperidol,Haloperidol,Psychosis & Schizophrenia,Antipsychotic,220,15,Yes,Yes,Available free at psychiatric hospitals
+40,Diazepam,Diazepam,Anxiety & Muscle Spasm,Benzodiazepine,95,8,Yes,Yes,Short term use only risk of dependence
+41,Ranitidine,Famotidine,Acidity & Ulcers,H2 Blocker,120,10,Yes,No,Alternative to omeprazole for mild acidity
+42,Bisoprolol,Bisoprolol,Heart Failure & Hypertension,Beta Blocker,380,22,Yes,Yes,Preferred beta blocker for heart failure
+43,Losartan,Losartan,High Blood Pressure & Kidney Protection,ARB,420,25,Yes,Yes,Good alternative to ACE inhibitors
+44,Metoprolol,Metoprolol,High Blood Pressure & Angina,Beta Blocker,280,18,Yes,Yes,Widely available generic
+45,Clopidogrel,Clopidogrel,Heart Attack Prevention,Antiplatelet,680,35,Yes,Yes,Free at government hospitals post heart attack
+46,Aspirin Low Dose,Aspirin,Heart Attack Prevention,Antiplatelet,95,5,Yes,No,75mg daily dose available cheaply everywhere
+47,Calcium Carbonate,Calcium Carbonate,Bone Health & Osteoporosis,Supplement,280,20,No,No,Take with Vitamin D for best absorption
+48,Vitamin D3,Cholecalciferol,Bone Health & Immunity,Supplement,350,30,No,No,Sun exposure also provides free Vitamin D
+49,Multivitamin,Multivitamin,General Nutrition,Supplement,420,35,No,No,Generic brands equally effective as expensive ones
+50,Albendazole,Albendazole,Worm Infections,Antiparasitic,120,15,Yes,No,Free deworming tablets at government health centers

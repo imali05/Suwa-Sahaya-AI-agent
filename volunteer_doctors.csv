@@ -1,0 +1,51 @@
+id,name,specialization,phone,whatsapp,email,district,area,available_days,available_time,languages,consultation_type,max_patients_per_day,notes
+1,Dr. Nuwan Perera,General Physician,0771234561,0771234561,nuwan.perera@gmail.com,Colombo,Colombo 07,Monday;Wednesday;Friday,18:00-20:00,Sinhala;English,Online & In-Person,10,Free consultations for low-income patients
+2,Dr. Sandya Rajapaksa,Pediatrician,0712345672,0712345672,sandya.raj@gmail.com,Kandy,Peradeniya,Saturday;Sunday,09:00-13:00,Sinhala;English,In-Person,8,Specializes in child nutrition and fever management
+3,Dr. Chaminda Silva,Cardiologist,0762345673,0762345673,chaminda.silva@yahoo.com,Gampaha,Negombo,Tuesday;Thursday,17:00-19:00,Sinhala,Online,5,Heart disease advice and medication guidance
+4,Dr. Priyanka Fernando,Dermatologist,0752345674,0752345674,priyanka.f@gmail.com,Colombo,Colombo 03,Wednesday;Saturday,10:00-12:00,Sinhala;English;Tamil,Online,12,Skin conditions and allergy consultations
+5,Dr. Rohan Dissanayake,General Physician,0722345675,0722345675,rohan.d@gmail.com,Ratnapura,Ratnapura Town,Monday;Friday,16:00-18:00,Sinhala,In-Person,15,Rural community volunteer
+6,Dr. Amali Wickramasinghe,Gynecologist,0701234566,0701234566,amali.w@gmail.com,Colombo,Colombo 10,Thursday;Sunday,14:00-16:00,Sinhala;English,Online & In-Person,6,Women health issues and prenatal advice
+7,Dr. Kasun Jayawardena,Neurologist,0771234567,0771234567,kasun.j@gmail.com,Kandy,Kandy City,Saturday,09:00-12:00,Sinhala;English,Online,4,Headaches migraines and neurological symptoms
+8,Dr. Dilrukshi Bandara,ENT Specialist,0712345678,0712345678,dilrukshi.b@gmail.com,Kurunegala,Kurunegala Town,Tuesday;Friday,17:30-19:30,Sinhala,In-Person,10,Ear nose throat infections
+9,Dr. Manoj Gunasekara,Orthopedic Surgeon,0762345679,0762345679,manoj.g@gmail.com,Galle,Galle City,Wednesday;Sunday,10:00-13:00,Sinhala;English,Online,5,Bone joint and muscle pain advice
+10,Dr. Thilini Samarawickrama,Psychiatrist,0752345680,0752345680,thilini.s@gmail.com,Colombo,Colombo 05,Monday;Thursday;Saturday,19:00-21:00,Sinhala;English,Online,8,Mental health stress anxiety and depression support
+11,Dr. Buddhika Ranasinghe,General Physician,0722345681,0722345681,buddhika.r@gmail.com,Anuradhapura,Anuradhapura Town,Monday;Wednesday;Friday,17:00-19:00,Sinhala,In-Person,20,Serving rural North Central province patients
+12,Dr. Nadeeka Peiris,Diabetologist,0701234572,0701234572,nadeeka.p@gmail.com,Colombo,Colombo 08,Tuesday;Saturday,10:00-13:00,Sinhala;English,Online & In-Person,10,Diabetes management and dietary advice
+13,Dr. Saman Herath,Pulmonologist,0771234573,0771234573,saman.h@gmail.com,Matara,Matara Town,Friday;Sunday,16:00-18:00,Sinhala,In-Person,8,Asthma COPD and respiratory conditions
+14,Dr. Isuri Karunaratne,General Physician,0712345674,0712345674,isuri.k@gmail.com,Badulla,Badulla Town,Saturday;Sunday,09:00-12:00,Sinhala;Tamil,In-Person,12,Hill country community volunteer doctor
+15,Dr. Arjuna Mendis,Gastroenterologist,0762345675,0762345675,arjuna.m@gmail.com,Colombo,Colombo 02,Wednesday;Friday,18:00-20:00,Sinhala;English,Online,6,Digestive issues stomach pain and liver conditions
+16,Dr. Sachini Weerasinghe,General Physician,0752345676,0752345676,sachini.w@gmail.com,Gampaha,Gampaha Town,Monday;Thursday,17:00-19:00,Sinhala;English,In-Person,14,Free consultations for elderly patients
+17,Dr. Lahiru Pathirana,Ophthalmologist,0722345677,0722345677,lahiru.p@gmail.com,Colombo,Colombo 06,Tuesday;Saturday,10:00-13:00,Sinhala;English,Online & In-Person,8,Eye problems vision and cataracts
+18,Dr. Malsha Jayasena,Endocrinologist,0701234578,0701234578,malsha.j@gmail.com,Kandy,Kandy City,Wednesday;Sunday,14:00-17:00,Sinhala;English,Online,6,Thyroid diabetes and hormonal disorders
+19,Dr. Dinesh Kulathunga,General Physician,0771234579,0771234579,dinesh.k@gmail.com,Polonnaruwa,Polonnaruwa Town,Monday;Friday,16:00-18:30,Sinhala,In-Person,18,Rural outreach volunteer North Central province
+20,Dr. Chamari Alwis,Pediatrician,0712345680,0712345680,chamari.a@gmail.com,Galle,Galle City,Saturday;Sunday,09:00-12:00,Sinhala;English,In-Person,10,Child health nutrition and vaccination advice
+21,Dr. Ruwan Senanayake,Cardiologist,0762345681,0762345681,ruwan.s@gmail.com,Colombo,Colombo 04,Thursday;Saturday,18:00-20:00,Sinhala;English,Online,5,Cardiac disease hypertension and cholesterol
+22,Dr. Nimali Rajapaksha,Dermatologist,0752345682,0752345682,nimali.r@gmail.com,Matara,Matara Town,Tuesday;Friday,17:00-19:00,Sinhala,In-Person,10,Skin diseases acne psoriasis and eczema
+23,Dr. Asanka Wijesinghe,Neurologist,0722345683,0722345683,asanka.w@gmail.com,Colombo,Colombo 07,Wednesday;Saturday,10:00-12:00,Sinhala;English,Online,4,Epilepsy stroke and movement disorders
+24,Dr. Kushani Dias,Gynecologist,0701234584,0701234584,kushani.d@gmail.com,Kurunegala,Kurunegala Town,Monday;Thursday,17:00-19:00,Sinhala,In-Person,6,Womens health menstrual issues and fertility
+25,Dr. Tharaka Bandara,General Physician,0771234585,0771234585,tharaka.b@gmail.com,Kegalle,Kegalle Town,Tuesday;Friday,16:00-18:00,Sinhala,In-Person,15,Serving Sabaragamuwa rural communities
+26,Dr. Vindya Colambage,Psychiatrist,0712345686,0712345686,vindya.c@gmail.com,Colombo,Colombo 03,Monday;Thursday,19:00-21:00,Sinhala;English,Online,7,Post-crisis mental health support anxiety stress
+27,Dr. Pradeep Kariyawasam,Orthopedic Surgeon,0762345687,0762345687,pradeep.k@gmail.com,Kandy,Kandy City,Saturday,09:00-13:00,Sinhala;English,Online & In-Person,5,Sports injuries joint replacement advice
+28,Dr. Hasini Seneviratne,ENT Specialist,0752345688,0752345688,hasini.s@gmail.com,Colombo,Colombo 10,Wednesday;Friday,17:00-19:00,Sinhala;English,In-Person,9,Sinusitis hearing loss and throat conditions
+29,Dr. Gihan Ranawaka,General Physician,0722345689,0722345689,gihan.r@gmail.com,Ampara,Ampara Town,Monday;Wednesday;Friday,16:00-18:00,Sinhala;Tamil,In-Person,16,Eastern province rural healthcare volunteer
+30,Dr. Dilhani Madushanka,Pulmonologist,0701234590,0701234590,dilhani.m@gmail.com,Colombo,Colombo 08,Tuesday;Saturday,10:00-12:00,Sinhala;English,Online,7,COVID long-haul asthma and lung disease
+31,Dr. Sampath Rajapaksa,General Physician,0771234591,0771234591,sampath.r@gmail.com,Hambantota,Hambantota Town,Monday;Thursday,16:00-18:00,Sinhala,In-Person,18,Southern province coastal community volunteer
+32,Dr. Iresha Liyanage,Diabetologist,0712345692,0712345692,iresha.l@gmail.com,Gampaha,Gampaha Town,Wednesday;Saturday,10:00-13:00,Sinhala;English,Online & In-Person,9,Type 1 and Type 2 diabetes management
+33,Dr. Buddhima Rathnayake,Gastroenterologist,0762345693,0762345693,buddhima.r@gmail.com,Kandy,Peradeniya,Thursday;Sunday,14:00-17:00,Sinhala;English,Online,5,Liver disease hepatitis and bowel conditions
+34,Dr. Chathura Perera,General Physician,0752345694,0752345694,chathura.p@gmail.com,Colombo,Colombo 12,Monday;Wednesday;Friday,18:00-20:00,Sinhala,In-Person,20,Low income community volunteer Colombo
+35,Dr. Nadeesha Gunwardena,Ophthalmologist,0722345695,0722345695,nadeesha.g@gmail.com,Galle,Galle City,Tuesday;Friday,17:00-19:00,Sinhala;English,Online,6,Glaucoma diabetic retinopathy and eye infections
+36,Dr. Sanjeewa Amarasinghe,Cardiologist,0701234596,0701234596,sanjeewa.a@gmail.com,Colombo,Colombo 05,Wednesday;Saturday,18:00-20:00,Sinhala;English,Online,4,Arrhythmia heart failure and ECG interpretation
+37,Dr. Kavindya Jayawickrama,Pediatrician,0771234597,0771234597,kavindya.j@gmail.com,Anuradhapura,Anuradhapura Town,Saturday;Sunday,09:00-12:00,Sinhala,In-Person,10,Child growth development and childhood diseases
+38,Dr. Ruwanthi Hettiarachchi,General Physician,0712345698,0712345698,ruwanthi.h@gmail.com,Colombo,Colombo 09,Tuesday;Thursday,17:00-19:00,Sinhala;English,In-Person,12,Free consultations for plantation community workers
+39,Dr. Vimukthi Wickrema,Endocrinologist,0762345699,0762345699,vimukthi.w@gmail.com,Colombo,Colombo 07,Monday;Friday,18:00-20:00,Sinhala;English,Online,5,Obesity PCOS adrenal and thyroid disorders
+40,Dr. Sulochana Jayasinghe,Gynecologist,0752345700,0752345700,sulochana.j@gmail.com,Matara,Matara Town,Wednesday;Sunday,10:00-13:00,Sinhala,In-Person,7,Prenatal care family planning and menopause
+41,Dr. Asela Fernando,General Physician,0722345701,0722345701,asela.f@gmail.com,Trincomalee,Trincomalee Town,Monday;Thursday,16:00-18:00,Sinhala;Tamil;English,In-Person,15,Trilingual volunteer Eastern province
+42,Dr. Chami Pieris,Dermatologist,0701234702,0701234702,chami.p@gmail.com,Kandy,Kandy City,Tuesday;Saturday,10:00-12:00,Sinhala;English,Online & In-Person,11,Hair loss vitiligo and fungal skin infections
+43,Dr. Mahesh Jayaratne,Orthopedic Surgeon,0771234703,0771234703,mahesh.j@gmail.com,Colombo,Colombo 06,Thursday;Sunday,14:00-17:00,Sinhala;English,Online,4,Knee replacement spine and fracture management
+44,Dr. Nishadi Ekanayake,Psychiatrist,0712345704,0712345704,nishadi.e@gmail.com,Colombo,Colombo 03,Monday;Wednesday;Friday,19:00-21:00,Sinhala;English,Online,8,Youth mental health and economic crisis counselling
+45,Dr. Dhanushka Dissanayake,Pulmonologist,0762345705,0762345705,dhanushka.d@gmail.com,Kurunegala,Kurunegala Town,Tuesday;Friday,17:00-19:00,Sinhala,In-Person,8,Tuberculosis detection and respiratory infections
+46,Dr. Pavithra Nanayakkara,General Physician,0752345706,0752345706,pavithra.n@gmail.com,Ratnapura,Ratnapura Town,Monday;Thursday,16:00-18:30,Sinhala,In-Person,16,Gem mine worker health and occupational disease
+47,Dr. Hiruni Perera,Cardiologist,0722345707,0722345707,hiruni.p@gmail.com,Colombo,Colombo 02,Wednesday;Saturday,18:00-20:00,Sinhala;English,Online,5,Women cardiac health and preventive cardiology
+48,Dr. Ravindu Silva,General Physician,0701234708,0701234708,ravindu.s@gmail.com,Jaffna,Jaffna City,Saturday;Sunday,09:00-12:00,Tamil;Sinhala;English,In-Person,14,Northern province trilingual volunteer doctor
+49,Dr. Thushara Gunawardena,Gastroenterologist,0771234709,0771234709,thushara.g@gmail.com,Colombo,Colombo 10,Tuesday;Friday,17:00-19:30,Sinhala;English,Online,6,Colorectal cancer screening and digestive health
+50,Dr. Manori Bandara,General Physician,0712345710,0712345710,manori.b@gmail.com,Badulla,Badulla Town,Monday;Wednesday;Friday,16:00-18:00,Sinhala;Tamil,In-Person,17,Up-country tea estate community health volunteer
